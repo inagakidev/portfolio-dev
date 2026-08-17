@@ -8,9 +8,9 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
 
   const LINKS = [
     { num: '01', label: t('contact.email'), value: profile.socials.email, href: `mailto:${profile.socials.email}` },
-    { num: '02', label: t('contact.linkedin'), value: '@amandainagaki', href: profile.socials.linkedin },
-    { num: '03', label: t('contact.github'), value: '@amandainagaki', href: profile.socials.github },
-    { num: '04', label: t('contact.instagram'), value: '@amandainagaki', href: profile.socials.instagram },
+    { num: '02', label: t('contact.linkedin'), value: '@amanda-inagaki', href: profile.socials.linkedin },
+    { num: '03', label: t('contact.github'), value: '@inagakidev', href: profile.socials.github },
+    { num: '04', label: t('contact.instagram'), value: '@amandfsk', href: profile.socials.instagram },
   ];
 
   return (

@@ -11,9 +11,9 @@ export const profile = {
   heroJp: '創る', // tsukuru — to create
   portrait: portraitImg,
   socials: {
-    email: 'hello@amandainagaki.dev',
-    github: 'https://github.com/amandainagaki',
-    linkedin: 'https://www.linkedin.com/in/amandainagaki',
-    instagram: 'https://www.instagram.com/amandainagaki',
+    email: 'inagakilanding@gmail.com',
+    github: 'https://github.com/inagakidev',
+    linkedin: 'https://www.linkedin.com/in/amanda-inagaki',
+    instagram: 'https://www.instagram.com/amandfsk',
   },
 };
