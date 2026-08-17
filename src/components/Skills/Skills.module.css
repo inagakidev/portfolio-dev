@@ -145,7 +145,7 @@
   }
 
   .skills {
-    margin-top: -4rem;
+    margin-top: -6rem;
     padding-top: clamp(7rem, 16vh, 11rem);
   }
 }
