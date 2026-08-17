@@ -1,0 +1,226 @@
+.sakura {
+  position: absolute;
+  top: 6%;
+  right: 3%;
+  color: var(--c-rose);
+  opacity: 0.9;
+  transform: rotate(18deg);
+}
+
+.heading {
+  font-size: clamp(2.1rem, 6.4vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.6ch;
+  align-items: baseline;
+  margin-bottom: 1.4rem;
+}
+
+.heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-red);
+}
+
+.intro {
+  max-width: 62ch;
+  color: var(--c-ink-soft);
+  font-weight: 300;
+  margin-bottom: clamp(3.5rem, 8vh, 6rem);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4.5rem, 12vh, 8rem);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Project                                                            */
+/* ------------------------------------------------------------------ */
+.project {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.project__ghost {
+  position: absolute;
+  top: -1.2rem;
+  right: 0;
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(7rem, 22vw, 17rem);
+  line-height: 1;
+  color: var(--c-red);
+  opacity: 0.09;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.project__head {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem 1.5rem;
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+
+.project__eyebrow {
+  grid-column: 1 / -1;
+  color: var(--c-ink-soft);
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.project__year {
+  color: var(--c-red);
+}
+
+.project__titlewrap {
+  overflow: hidden;
+  padding-bottom: 0.15em;
+}
+
+.project__title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: 0.015em;
+  color: var(--c-ink);
+}
+
+.project__title span {
+  display: block;
+}
+
+.project__jp {
+  align-self: end;
+  justify-self: end;
+  color: var(--c-red-soft);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.project__body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.project--flip .project__body {
+  direction: rtl;
+}
+
+.project--flip .project__body > * {
+  direction: ltr;
+}
+
+.project__media {
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 40px 80px -50px rgba(28, 22, 19, 0.45);
+  will-change: transform;
+}
+
+.project__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project__media :global(.project-mockup) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.project__category {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: var(--c-red);
+}
+
+.project__desc {
+  color: var(--c-ink-soft);
+  font-weight: 300;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.8;
+  max-width: 48ch;
+}
+
+.project__techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.project__tech {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  border: 1px solid rgba(28, 22, 19, 0.3);
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Responsive                                                         */
+/* ------------------------------------------------------------------ */
+@media (max-width: 960px) {
+  .project__body,
+  .project--flip .project__body {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .project__ghost {
+    right: -2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .project__ghost {
+    font-size: clamp(5rem, 22vw, 8rem);
+    top: -0.8rem;
+    right: -2vw;
+  }
+
+  .sakura {
+    width: 80px;
+    top: 4%;
+  }
+
+  .project__head {
+    grid-template-columns: 1fr;
+    gap: 0.2rem 0;
+  }
+
+  .project__jp {
+    justify-self: start;
+  }
+}

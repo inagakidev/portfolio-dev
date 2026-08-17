@@ -1,0 +1,151 @@
+.skills {
+  overflow-x: hidden;
+  position: relative;
+  margin-top: -5rem;
+  padding-top: clamp(8rem, 18vh, 13rem);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Marquee                                                            */
+/* ------------------------------------------------------------------ */
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.85rem 0;
+  background: var(--c-blush);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding-right: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--c-ink);
+  font-weight: 500;
+}
+
+.marquee__flower {
+  color: var(--c-red);
+  font-size: 0.85em;
+  flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Heading                                                            */
+/* ------------------------------------------------------------------ */
+.heading {
+  font-size: clamp(2.1rem, 6.4vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+  margin-bottom: clamp(3rem, 7vh, 5rem);
+}
+
+.heading span {
+  display: block;
+}
+
+.heading__dot {
+  color: var(--c-red);
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Editorial list                                                     */
+/* ------------------------------------------------------------------ */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vh, 5rem);
+}
+
+.group__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.group__num {
+  font-family: var(--font-serif);
+  color: var(--c-red);
+  font-size: 1rem;
+}
+
+.group__title .eyebrow {
+  color: var(--c-ink-soft);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+  padding: clamp(1rem, 2.6vh, 1.5rem) 0;
+}
+
+.item__num {
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--c-ink-soft);
+  opacity: 0.7;
+}
+
+.item__name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  color: var(--c-ink);
+}
+
+.item__ring {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--c-red);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Responsive                                                         */
+/* ------------------------------------------------------------------ */
+@media (max-width: 720px) {
+  .item {
+    grid-template-columns: 2rem 1fr auto;
+  }
+
+  .marquee__item {
+    gap: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .marquee__flower {
+    font-size: 0.9em;
+  }
+
+  .skills {
+    margin-top: -4rem;
+    padding-top: clamp(7rem, 16vh, 11rem);
+  }
+}

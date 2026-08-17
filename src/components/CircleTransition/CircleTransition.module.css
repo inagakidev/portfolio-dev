@@ -1,0 +1,333 @@
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Cover container                                                    */
+/* ------------------------------------------------------------------ */
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--nav-h);
+  padding-bottom: 8vh;
+}
+
+/* ------------------------------------------------------------------ */
+/*  The red circle                                                     */
+/* ------------------------------------------------------------------ */
+.circleWrap {
+  position: absolute;
+  top: 50%;
+  right: clamp(3%, 5vw, 7%);
+  width: clamp(300px, 50vmin, 480px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--c-red-soft),
+    var(--c-red) 48%,
+    var(--c-red-deep) 100%
+  );
+  transform-origin: 50% 50%;
+  display: grid;
+  place-items: center;
+  will-change: transform;
+  box-shadow: 0 30px 80px -30px rgba(153, 7, 30, 0.55);
+}
+
+.circle__ring {
+  position: absolute;
+  inset: clamp(14px, 4%, 28px);
+  border: 1px solid rgba(250, 248, 244, 0.5);
+  border-radius: 50%;
+}
+
+.circle__ringSm {
+  position: absolute;
+  inset: clamp(40px, 11%, 78px);
+  border: 1px dashed rgba(250, 248, 244, 0.28);
+  border-radius: 50%;
+  animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle__face {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-40%);
+  width: 90%;
+  top: -5%;
+  overflow: visible;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 55%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.3) 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom,
+    black 0%,
+    black 55%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.3) 85%,
+    transparent 100%
+  );
+}
+
+.circle__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.circle__monogram {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 5vmin, 2.6rem);
+  color: var(--c-red);
+  letter-spacing: 0.04em;
+}
+
+.circle__label {
+  position: absolute;
+  bottom: 12%;
+  color: rgba(250, 248, 244, 0.9);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Reveal — inside the circle                                         */
+/* ------------------------------------------------------------------ */
+.reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--c-red-soft),
+    var(--c-red) 46%,
+    var(--c-red-deep) 100%
+  );
+  color: var(--c-paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 1rem) var(--gutter) 4rem;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.reveal__ring {
+  position: absolute;
+  right: -12vw;
+  bottom: -18vw;
+  width: min(58vw, 720px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(250, 248, 244, 0.25);
+  border-radius: 50%;
+}
+
+.reveal__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reveal__label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reveal__label .jp {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.reveal__title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 10rem);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  margin: clamp(1.4rem, 3.5vh, 3rem) 0 clamp(2rem, 5vh, 3.4rem);
+}
+
+.reveal__title em {
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(250, 248, 244, 0.9);
+}
+
+.reveal__index {
+  max-width: 720px;
+}
+
+.reveal__indexLink {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+  padding: clamp(0.7rem, 1.8vh, 1.1rem) 0;
+  border-top: 1px solid rgba(250, 248, 244, 0.28);
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  color: var(--c-paper);
+  transition: padding-left 0.4s var(--ease-out), color 0.3s;
+}
+
+.reveal__indexLink:last-child {
+  border-bottom: 1px solid rgba(250, 248, 244, 0.28);
+}
+
+.reveal__indexLink:hover {
+  padding-left: 0.8rem;
+  color: #ffe3e8;
+}
+
+.reveal__num {
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.reveal__indexLink .jp {
+  text-align: right;
+  color: rgba(250, 248, 244, 0.85);
+  font-size: 0.95rem;
+}
+
+.reveal__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5vh;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.reveal__arrow {
+  animation: bounce 1.8s var(--ease-io) infinite;
+  font-size: 1.1rem;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Reduced motion                                                     */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .cover {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .circleWrap {
+    width: min(60vw, 380px);
+  }
+
+  .reveal {
+    display: none;
+  }
+
+  .circle__ringSm,
+  .reveal__arrow {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Responsive                                                         */
+/* ------------------------------------------------------------------ */
+@media (max-width: 1560px) {
+  .circleWrap {
+    width: clamp(200px, 30vmin, 380px);
+  }
+}
+
+@media (max-width: 900px) {
+  .circleWrap {
+    right: 4vw;
+  }
+}
+
+@media (max-width: 860px) {
+  .reveal__index {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .cover {
+    justify-content: flex-start;
+    padding-top: calc(var(--nav-h) + 5vh);
+    padding-bottom: 6vh;
+  }
+
+  .circleWrap {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: 6vh;
+    transform: translateX(-50%);
+    width: min(60vw, 280px);
+  }
+
+  .circle__face {
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    width: 58%;
+    transform: translate(-50%, -50%);
+  }
+
+  .circle__ringSm {
+    animation-duration: 90s;
+  }
+}
