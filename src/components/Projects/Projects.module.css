@@ -225,20 +225,21 @@
   }
 
   .project__title {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.6rem, 8vw, 3rem);
   }
 
   .project__desc {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     line-height: 1.7;
     max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .project__category {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   .project__meta {
-    gap: 1rem;
+    gap: 0.9rem;
   }
 }
