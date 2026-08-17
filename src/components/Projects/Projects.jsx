@@ -1,5 +1,6 @@
 import { forwardRef, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { TbArrowUpRight } from 'react-icons/tb';
 import { projects } from '../../data/projects';
 import { initProjectAnimations } from '../../animations/projectAnimations';
 import SakuraBlossom from '../Decorative/SakuraBlossom';
@@ -61,7 +62,7 @@ function ProjectItem({ project, index }) {
               >
                 <span className="btn__fill" />
                 {t('projects.visit')}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"><TbArrowUpRight /></span>
               </a>
             ) : null}
             <a
@@ -95,7 +96,6 @@ const Projects = forwardRef(function Projects(_props, ref) {
         <div className="section-head">
           <span className="section-head__label">
             <span className="section-head__num">03</span>
-            <span className="section-head__line" aria-hidden="true" />
             <span className="eyebrow">{t('projects.eyebrow')}</span>
           </span>
           <span className="jp section-head__jp" aria-hidden="true">作品</span>

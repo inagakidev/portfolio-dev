@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { TbArrowUpRight } from 'react-icons/tb';
 import { profile } from '../../data/profile';
 import styles from './Contact.module.css';
 
@@ -21,7 +22,6 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
         <div className="section-head">
           <span className="section-head__label">
             <span className="section-head__num">04</span>
-            <span className="section-head__line" aria-hidden="true" />
             <span className="eyebrow">{t('contact.eyebrow')}</span>
           </span>
           <span className="jp section-head__jp" aria-hidden="true">連絡</span>
@@ -52,7 +52,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
                 <span className={styles.links__num}>{link.num}</span>
                 <span className={styles.links__label}>{link.label}</span>
                 <span className={styles.links__value}>{link.value}</span>
-                <span className={styles.links__arrow} aria-hidden="true">↗</span>
+                <span className={styles.links__arrow} aria-hidden="true"><TbArrowUpRight /></span>
               </a>
             </li>
           ))}
@@ -67,7 +67,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
               name: `${profile.name.first} ${profile.name.last}`,
             })}
           </p>
-          <p className={`jp ${styles.footer__note}`} lang="ja">{t('contact.footerNote')}</p>
+          
           <button type="button" className={styles.backTop} onClick={onBackToTop}>
             <span className={styles.backTop__arrow} aria-hidden="true">↑</span>
             <span className="eyebrow">{t('contact.backToTop')}</span>

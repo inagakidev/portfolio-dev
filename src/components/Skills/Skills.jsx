@@ -76,7 +76,6 @@ const Skills = forwardRef(function Skills(_props, ref) {
         <div className="section-head">
           <span className="section-head__label">
             <span className="section-head__num">02</span>
-            <span className="section-head__line" aria-hidden="true" />
             <span className="eyebrow">{t('stack.eyebrow')}</span>
           </span>
           <span className="jp section-head__jp" aria-hidden="true">{stack.jp}</span>

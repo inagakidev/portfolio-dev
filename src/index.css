@@ -332,15 +332,6 @@ ol {
   letter-spacing: -0.02em;
 }
 
-.section-head__line {
-  width: 1px;
-  height: clamp(24px, 4vh, 40px);
-  background: var(--c-red);
-  opacity: 0.4;
-  align-self: center;
-  margin-bottom: 0.15em;
-}
-
 .section-head__label .eyebrow {
   margin-bottom: 0.15em;
   color: var(--c-ink);
@@ -386,7 +377,7 @@ ol {
 }
 
 @media (max-width: 600px) {
-  .section-head__line {
-    display: none;
+  .section-head__num {
+    font-size: clamp(2rem, 5vw, 3rem);
   }
 }

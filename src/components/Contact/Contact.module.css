@@ -130,7 +130,8 @@
 }
 
 .links__arrow {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  display: flex;
   transition: transform 0.35s var(--ease-out);
 }
 
