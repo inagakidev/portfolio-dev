@@ -1,16 +1,59 @@
-# React + Vite
+# Amanda Inagaki · Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Portfólio editorial com estética japonesa, construído com React e motion design.
 
-Currently, two official plugins are available:
+## Sobre
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Um site pessoal que une tipografia editorial, animações suaves e uma paleta inspirada no vermelho japonês. Cada seção foi pensada pra guiar o visitante de forma natural, do hero até o contato.
 
-## React Compiler
+O projeto nasceu da vontade de criar algo que não parecesse um portfólio genérico. A ideia era juntar o que eu gosto em design editorial com a possibilidade de colocar tudo em código.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## O que tem
 
-## Expanding the Oxlint configuration
+* Animações de scroll com GSAP e ScrollTrigger
+* Sistema de internacionalização (PT, EN, JA)
+* Layout responsivo com mobile first
+* Marquee com ícones de flor (react-icons)
+* Menu overlay com transições suaves
+* Custom cursor
+* Tema com cores do Japão
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tech Stack
+
+* React 19
+* Vite
+* GSAP
+* i18next
+* react-icons
+* CSS Modules
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+## Estrutura
+
+```
+src/
+├── animations/      # Lógica de animação (hero, scroll, projects)
+├── assets/          # Imagens e fontes
+├── components/      # Componentes React organizados por seção
+│   ├── About/
+│   ├── Contact/
+│   ├── Hero/
+│   ├── Navbar/
+│   ├── Projects/
+│   └── Skills/
+├── data/            # Dados de projetos, stack e perfil
+└── i18n.js          # Traduções (português, inglês, japonês)
+```
+
+## Autora
+
+Amanda Inagaki
+Desenvolvedora Front-end & Full-stack
+
+GitHub: [@inagakidev](https://github.com/inagakidev)
