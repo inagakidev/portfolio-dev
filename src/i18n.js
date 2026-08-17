@@ -159,7 +159,7 @@ const pt = {
       role: 'Desenvolvedora Front-end',
       location: 'São Paulo · Brasil',
       intro:
-        'Começou querendo fazer design gráfico, descobriu que código podia ir além. Hoje construo interfaces onde criatividade e técnica se encontram.',
+        'Comecei querendo fazer design gráfico, descobri que código podia ir além. Hoje construo interfaces onde criatividade e técnica se encontram.',
       viewWork: 'Ver Projetos',
       contact: 'Falar comigo',
       scroll: 'Role',

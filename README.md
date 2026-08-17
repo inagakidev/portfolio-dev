@@ -54,6 +54,6 @@ src/
 ## Autora
 
 Amanda Inagaki
-Desenvolvedora Front-end & Full-stack
+Desenvolvedora Front-end
 
 GitHub: [@inagakidev](https://github.com/inagakidev)
