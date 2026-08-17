@@ -384,3 +384,9 @@ ol {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media (max-width: 600px) {
+  .section-head__line {
+    display: none;
+  }
+}
