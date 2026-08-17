@@ -330,4 +330,12 @@
   .circle__ringSm {
     animation-duration: 90s;
   }
+
+  .reveal__title {
+    font-size: clamp(2rem, 14vw, 4rem);
+  }
+
+  .reveal__indexLink {
+    font-size: clamp(0.95rem, 4vw, 1.3rem);
+  }
 }
