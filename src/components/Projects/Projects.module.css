@@ -224,22 +224,26 @@
     justify-self: start;
   }
 
-  .project__title {
-    font-size: clamp(1.6rem, 8vw, 3rem);
+  .project__tech {
+    font-size: 0.62rem;
+    padding: 0.4em 0.9em;
   }
 
-  .project__desc {
-    font-size: 0.88rem;
-    line-height: 1.7;
+  .project__links {
+    gap: 0.6rem;
+  }
+
+  .project__links .btn {
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+  }
+
+  .heading {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .intro {
+    font-size: 0.92rem;
     max-width: 100%;
-    overflow-wrap: break-word;
-  }
-
-  .project__category {
-    font-size: 0.68rem;
-  }
-
-  .project__meta {
-    gap: 0.9rem;
   }
 }
