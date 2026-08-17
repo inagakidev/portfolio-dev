@@ -223,4 +223,22 @@
   .project__jp {
     justify-self: start;
   }
+
+  .project__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .project__desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  .project__category {
+    font-size: 0.7rem;
+  }
+
+  .project__meta {
+    gap: 1rem;
+  }
 }
