@@ -8,7 +8,7 @@ const en = {
     meta: {
       title: 'Amanda Inagaki — Portfolio',
       description:
-        'Amanda Inagaki — Front-end & Full-stack developer. Clear interfaces with attention to visual details and user experience.',
+        'Amanda Inagaki — Front-end developer. Clear interfaces with attention to visual details and user experience.',
     },
     common: {
       skipToContent: 'Skip to content',
@@ -29,7 +29,7 @@ const en = {
       coverAria: 'Cover',
       kicker: 'Portfolio · {{year}}',
       available: 'Available for work',
-      role: 'Front-end & Full-stack Developer',
+      role: 'Front-end Developer',
       location: 'São Paulo · Brazil',
       intro:
         'Started in graphic design, found my way to code. Today I build interfaces where creativity and technical precision meet.',
@@ -135,7 +135,7 @@ const pt = {
     meta: {
       title: 'Amanda Inagaki — Portfólio',
       description:
-        'Amanda Inagaki — Desenvolvedora Front-end & Full-stack. Interfaces claras, com atenção aos detalhes visuais e à experiência de quem usa.',
+        'Amanda Inagaki — Desenvolvedora Front-end. Interfaces claras, com atenção aos detalhes visuais e à experiência de quem usa.',
     },
     common: {
       skipToContent: 'Pular para o conteúdo',
@@ -156,7 +156,7 @@ const pt = {
       coverAria: 'Capa',
       kicker: 'Portfólio · {{year}}',
       available: 'Disponível para trabalho',
-      role: 'Desenvolvedora Front-end & Full-stack',
+      role: 'Desenvolvedora Front-end',
       location: 'São Paulo · Brasil',
       intro:
         'Começou querendo fazer design gráfico, descobriu que código podia ir além. Hoje construo interfaces onde criatividade e técnica se encontram.',
@@ -262,7 +262,7 @@ const ja = {
     meta: {
       title: 'アマンダ・イナガキ — ポートフォリオ',
       description:
-        'アマンダ・イナガキ — フロントエンド／フルスタック開発者。視覚的なディテールとユーザー体験に配慮したクリアなインターフェース。',
+        'アマンダ・イナガキ — フロントエンド開発者。視覚的なディテールとユーザー体験に配慮したクリアなインターフェース。',
     },
     common: {
       skipToContent: '本文へスキップ',
@@ -283,7 +283,7 @@ const ja = {
       coverAria: '表紙',
       kicker: 'ポートフォリオ · {{year}}',
       available: 'お仕事のご相談受付中',
-      role: 'フロントエンド／フルスタック開発者',
+      role: 'フロントエンド開発者',
       location: 'サンパウロ・ブラジル',
       intro:
         'グラフィックデザインから始まり、コードの世界に出会った。今天才と技術が出会うインターフェースを作っています。',
