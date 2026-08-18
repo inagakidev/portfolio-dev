@@ -45,17 +45,6 @@ const About = forwardRef(function About(_props, ref) {
               <cite className="eyebrow">— {profile.name.first}</cite>
             </blockquote>
 
-            <div className={styles.approach} data-anim="para">
-              <h3 className={`eyebrow ${styles.approach__title}`}>{t('about.approachTitle')}</h3>
-              <ul className={styles.approach__list}>
-                {approach.map((item) => (
-                  <li key={item}>
-                    <span className={styles.approach__dot} aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           <aside className={styles.aside}>
