@@ -4,9 +4,6 @@
   background: var(--c-paper);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Cover composition                                                  */
-/* ------------------------------------------------------------------ */
 .ghost {
   position: absolute;
   left: calc(var(--gutter) * 0.4);
@@ -79,7 +76,7 @@
 }
 
 .cover__role {
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  margin-top: clamp(1.5rem, 5vh, 2.5rem);
   font-family: var(--font-condensed);
   text-transform: uppercase;
   letter-spacing: 0.32em;

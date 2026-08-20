@@ -101,7 +101,7 @@ const Projects = forwardRef(function Projects(_props, ref) {
           <span className="jp section-head__jp" aria-hidden="true">作品</span>
         </div>
 
-        <h2 className={`font-serif ${styles.heading}`}>
+        <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">
             <Trans i18nKey="projects.h1a" />
           </span>

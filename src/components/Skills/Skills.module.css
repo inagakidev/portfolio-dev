@@ -1,13 +1,10 @@
 .skills {
   overflow-x: hidden;
   position: relative;
-  margin-top: -5rem;
-  padding-top: clamp(8rem, 18vh, 13rem);
+  margin-top: -6rem;
+  --section-py: clamp(8rem, 18vh, 13rem);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Marquee                                                            */
-/* ------------------------------------------------------------------ */
 .marquee {
   position: absolute;
   top: 0;
@@ -51,18 +48,8 @@
   flex-shrink: 0;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Heading                                                            */
-/* ------------------------------------------------------------------ */
 .heading {
-  font-size: clamp(2.1rem, 6.4vw, 5.2rem);
-  font-weight: 600;
-  line-height: 1.12;
   margin-bottom: clamp(3rem, 7vh, 5rem);
-}
-
-.heading span {
-  display: block;
 }
 
 .heading__dot {
@@ -70,9 +57,6 @@
   font-style: normal;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Editorial list                                                     */
-/* ------------------------------------------------------------------ */
 .list {
   display: flex;
   flex-direction: column;
@@ -91,6 +75,7 @@
   color: var(--c-red);
   font-size: 1rem;
 }
+
 
 .group__title .eyebrow {
   color: var(--c-ink-soft);
@@ -126,6 +111,7 @@
   opacity: 0.6;
 }
 
+
 /* ------------------------------------------------------------------ */
 /*  Responsive                                                         */
 /* ------------------------------------------------------------------ */
@@ -145,7 +131,7 @@
   }
 
   .skills {
-    margin-top: -6rem;
-    padding-top: clamp(7rem, 16vh, 11rem);
+    margin-top: -9rem;
+    --section-py: clamp(7rem, 16vh, 11rem);
   }
 }

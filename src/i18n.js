@@ -48,7 +48,7 @@ const en = {
     about: {
       eyebrow: 'About',
       h1a: 'Building interfaces',
-      h1b: 'that make sense.',
+      h1b: 'that make <em>sense</em>.',
       tagline: "I don't write code just to make things work. I think about how each element communicates, navigates, and behaves for the person on the other side.",
       paragraphs: [
         "I'm a front-end developer focused on interfaces that combine aesthetics and functionality. I started studying graphic design, but it was in code that I found the space to put ideas into practice for real.",
@@ -69,7 +69,7 @@ const en = {
     stack: {
       eyebrow: 'Stack',
       h1a: 'Tools &',
-      h1b: 'technologies<dot>.</dot>',
+      h1b: '<dot>technologies</dot><dot>.</dot>',
       groups: {
         front: 'Front-end',
         back: 'Back-end',
@@ -117,7 +117,7 @@ const en = {
     contact: {
       eyebrow: 'Contact',
       h1a: "Let's exchange",
-      h1b: 'some ideas.',
+      h1b: 'some <em>ideas</em>.',
       note: "If you have a project in mind, want to chat about development, or just want to say hi, my WhatsApp and email are always open.",
       email: 'Email',
       linkedin: 'LinkedIn',
@@ -160,7 +160,7 @@ const pt = {
       location: 'São Paulo · Brasil',
       intro:
         'Comecei querendo fazer design gráfico, descobri que código podia ir além. Hoje construo interfaces onde criatividade e técnica se encontram.',
-      viewWork: 'Ver Projetos',
+      viewWork: 'Projetos',
       contact: 'Falar comigo',
       scroll: 'Role',
     },
@@ -175,7 +175,7 @@ const pt = {
     about: {
       eyebrow: 'Sobre',
       h1a: 'Criando interfaces',
-      h1b: 'que fazem sentido.',
+      h1b: 'que fazem <em>sentido</em>.',
       tagline: 'Não escrevo código só pra funcionar. Penso em como cada elemento comunica, navega e se comporta pra quem tá do outro lado.',
       paragraphs: [
         'Sou desenvolvedora front-end com foco em interfaces que unem estética e funcionalidade. Comecei estudando design gráfico, mas foi no código que encontrei o espaço pra colocar as ideias em prática de verdade.',
@@ -196,7 +196,7 @@ const pt = {
     stack: {
       eyebrow: 'Habilidades',
       h1a: 'Ferramentas &',
-      h1b: 'tecnologias<dot>.</dot>',
+      h1b: '<dot>tecnologias</dot><dot>.</dot>',
       groups: {
         front: 'Front-end',
         back: 'Back-end',
@@ -244,7 +244,7 @@ const pt = {
     contact: {
       eyebrow: 'Contato',
       h1a: 'Bora trocar',
-      h1b: 'uma ideia.',
+      h1b: 'uma <em>ideia</em>.',
       note: 'Se você tem um projeto em mente, quer trocar uma ideia sobre desenvolvimento ou só quer dizer oi, meu WhatsApp e e-mail estão sempre abertos.',
       email: 'E-mail',
       linkedin: 'LinkedIn',
@@ -302,7 +302,7 @@ const ja = {
     about: {
       eyebrow: '私について',
       h1a: 'インターフェースを',
-      h1b: '作っています。',
+      h1b: '作って<em>います</em>。',
       tagline: '動くコードを書くだけでなく、各要素が向こう側の人にどう伝わり、どうNavigateし、どう振る舞うかを考えています。',
       paragraphs: [
         'フロントエンド開発者として、美学と機能性を兼ね備えたインターフェースに取り組んでいます。グラフィックデザインから始めましたが、コードの中にアイデアを実現する場所を見つけました。',
@@ -323,7 +323,7 @@ const ja = {
     stack: {
       eyebrow: 'スキル',
       h1a: 'ツールと',
-      h1b: '技術<dot>。</dot>',
+      h1b: '<dot>技術</dot><dot>。</dot>',
       groups: {
         front: 'フロントエンド',
         back: 'バックエンド',
@@ -371,7 +371,7 @@ const ja = {
     contact: {
       eyebrow: 'お問い合わせ',
       h1a: 'イデアを',
-      h1b: '交換しましょう。',
+      h1b: '交換<em>しましょう</em>。',
       note: 'プロジェクトのアイデアがある方、開発について話したい方、ただ挨拶したい方も、WhatsAppとメールはいつでも受け付けています。',
       email: 'メール',
       linkedin: 'LinkedIn',

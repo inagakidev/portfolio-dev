@@ -27,7 +27,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
           <span className="jp section-head__jp" aria-hidden="true">連絡</span>
         </div>
 
-        <h2 className={`font-serif ${styles.heading}`}>
+        <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">
             <Trans i18nKey="contact.h1a" />
           </span>

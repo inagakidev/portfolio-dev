@@ -21,7 +21,7 @@ const About = forwardRef(function About(_props, ref) {
           <span className="jp section-head__jp" aria-hidden="true">私</span>
         </div>
 
-        <h2 className={`font-serif ${styles.heading}`}>
+        <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">
             <Trans i18nKey="about.h1a" components={{ em: <em /> }} />
           </span>
