@@ -1,7 +1,3 @@
-/**
- * A single five-petal cherry blossom, drawn once as an SVG <symbol>.
- * Colours inherit from `currentColor`.
- */
 const BLOSSOM_PETAL = 'M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z';
 const STAMEN = 'M0 0 L0 -4.6';
 

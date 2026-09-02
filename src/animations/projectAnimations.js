@@ -3,11 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * Each project is an editorial spread that assembles as it scrolls into
- * view: ghost number, masked title, image reveal and meta. It reverses
- * gently as it leaves the viewport.
- */
 export function initProjectAnimations(container) {
   const mm = gsap.matchMedia();
 

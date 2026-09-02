@@ -3,11 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * Section reveals across the portfolio + the reading progress bar.
- * Elements opt in with `data-anim` attributes:
- *   heading / para / row / portrait / circle
- */
 export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactRef, onThemeChange }) {
   const mm = gsap.matchMedia();
 
@@ -110,6 +105,8 @@ export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactR
     });
   });
 
+  // Troca o tema da navbar quando a seção de contato entra/sai da viewport
+  // ("paper" sobre o fundo vermelho, "ink" no restante da página).
   if (contactRef?.current) {
     ScrollTrigger.create({
       trigger: contactRef.current,

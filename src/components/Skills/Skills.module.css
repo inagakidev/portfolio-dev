@@ -76,7 +76,6 @@
   font-size: 1rem;
 }
 
-
 .group__title .eyebrow {
   color: var(--c-ink-soft);
 }
@@ -111,10 +110,6 @@
   opacity: 0.6;
 }
 
-
-/* ------------------------------------------------------------------ */
-/*  Responsive                                                         */
-/* ------------------------------------------------------------------ */
 @media (max-width: 720px) {
   .item {
     grid-template-columns: 2rem 1fr auto;

@@ -13,8 +13,7 @@ export const projects = [
     techs: ['React', 'Node.js', 'Tailwind', 'PostgreSQL'],
     image: telaForaDoJogo,
     links: {
-      url: 'https://fora-do-jogo-tvsp.vercel.app',
-      github: 'https://github.com/amandainagaki/solari-bank',
+      url: 'foradojogo',
     },
   },
   {
@@ -28,8 +27,7 @@ export const projects = [
     techs: ['HTML', 'CSS', 'JavaScript'],
     image: telamrbeagle,
     links: {
-      url: 'https://canilmrbeagle.com.br',
-      github: '',
+      url: 'mrbeagle',
     },
   },
 ];

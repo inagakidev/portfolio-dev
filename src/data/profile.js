@@ -8,7 +8,7 @@ export const profile = {
   },
   roleJp: 'フロントエンド開発者',
   year: 2026,
-  heroJp: '創る', // tsukuru — to create
+  heroJp: '創る',
   portrait: portraitImg,
   socials: {
     email: 'inagakilanding@gmail.com',

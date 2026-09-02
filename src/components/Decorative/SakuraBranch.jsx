@@ -1,7 +1,3 @@
-/**
- * A cherry-tree branch used as a compositional element.
- * Colours inherit from `currentColor` — set the tone with a wrapping class.
- */
 const BRANCH = 'M6 150 C 34 122 58 100 84 62 C 98 42 108 28 134 10';
 const TWIG_A = 'M44 106 C 48 92 54 80 58 70';
 const TWIG_B = 'M96 56 C 106 42 112 30 118 18';
