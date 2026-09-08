@@ -10,6 +10,7 @@ export const profile = {
   year: 2026,
   heroJp: '創る',
   portrait: portraitImg,
+  cvUrl: '/cv/amanda-inagaki-cv.pdf',
   socials: {
     email: 'inagakilanding@gmail.com',
     github: 'https://github.com/inagakidev',

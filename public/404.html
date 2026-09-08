@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Oswald:wght@400;500&family=Zen+Old+Mincho:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>404 — Amanda Inagaki</title>
+    <style>
+      :root {
+        --c-red: #bc002d;
+        --c-ink: #1c1613;
+        --c-paper: #ffffff;
+        --c-rose: #e8d5cf;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow-x: clip;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: var(--c-paper);
+        color: var(--c-ink);
+        font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .stage {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+      }
+
+      .torii {
+        width: clamp(160px, 30vw, 220px);
+        height: auto;
+        color: var(--c-red);
+      }
+
+      .torii .broken {
+        transform-origin: 90% 20%;
+        animation: sway 4s ease-in-out infinite;
+      }
+
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(-3deg);
+        }
+      }
+
+      .eyebrow {
+        font-family: 'Oswald', 'Arial Narrow', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.34em;
+        font-size: 0.78rem;
+        color: var(--c-red);
+      }
+
+      h1 {
+        font-family: 'Zen Old Mincho', 'Noto Serif JP', Georgia, serif;
+        font-size: clamp(2.4rem, 6vw, 3.6rem);
+        font-weight: 600;
+        line-height: 1.15;
+      }
+
+      h1 em {
+        font-style: italic;
+        color: var(--c-red);
+      }
+
+      p {
+        max-width: 42ch;
+        color: #574a43;
+        line-height: 1.6;
+      }
+
+      a.home {
+        margin-top: 0.6rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75em;
+        padding: 0.95em 1.9em;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--c-paper);
+        background: var(--c-red);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      a.home:hover {
+        transform: translateY(-2px);
+      }
+
+      .petal {
+        position: absolute;
+        top: -40px;
+        color: var(--c-rose);
+        width: 14px;
+        height: 14px;
+        animation: fall 7s linear infinite;
+      }
+
+      .petal:nth-child(2) {
+        left: 15%;
+        animation-delay: -2s;
+        animation-duration: 8s;
+      }
+
+      .petal:nth-child(3) {
+        left: 82%;
+        animation-delay: -4.5s;
+        animation-duration: 6.5s;
+      }
+
+      .petal:nth-child(4) {
+        left: 45%;
+        animation-delay: -1s;
+        animation-duration: 9s;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 0.4;
+        }
+        100% {
+          transform: translate3d(-20px, 60vh, 0) rotate(200deg);
+          opacity: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .torii .broken,
+        .petal {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <span class="petal" aria-hidden="true">
+        <svg viewBox="-6 -16 12 18" fill="currentColor" width="100%" height="100%">
+          <path d="M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z" />
+        </svg>
+      </span>
+      <span class="petal" aria-hidden="true">
+        <svg viewBox="-6 -16 12 18" fill="currentColor" width="100%" height="100%">
+          <path d="M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z" />
+        </svg>
+      </span>
+      <span class="petal" aria-hidden="true">
+        <svg viewBox="-6 -16 12 18" fill="currentColor" width="100%" height="100%">
+          <path d="M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z" />
+        </svg>
+      </span>
+
+      <svg class="torii" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="18" y="34" width="164" height="12" rx="2" fill="currentColor" />
+        <rect x="10" y="52" width="180" height="8" rx="2" fill="currentColor" />
+        <rect x="42" y="60" width="14" height="90" fill="currentColor" />
+        <g class="broken">
+          <rect x="144" y="60" width="14" height="60" fill="currentColor" />
+          <rect x="150" y="118" width="14" height="34" fill="currentColor" transform="rotate(18 150 118)" />
+        </g>
+        <rect x="34" y="70" width="132" height="7" rx="2" fill="currentColor" opacity="0.7" />
+      </svg>
+
+      <p class="eyebrow">404 · 見つかりません</p>
+      <h1>Página não <em>encontrada</em></h1>
+      <p>Este caminho não existe — ou talvez tenha sido levado pelo vento, como as pétalas. Vamos voltar ao início.</p>
+      <a class="home" href="/">← Voltar ao portfólio</a>
+    </div>
+  </body>
+</html>

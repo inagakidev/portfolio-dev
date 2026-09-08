@@ -72,7 +72,7 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-40%);
-  width: 90%;
+  width: 100%;
   top: -5%;
   overflow: visible;
   z-index: 2;
@@ -93,7 +93,6 @@
 }
 
 .circle__img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;

@@ -68,8 +68,8 @@
   position: relative;
   margin: 0;
   width: 100%;
-  max-width: 900px;
-  aspect-ratio: 4 / 5;
+  max-width: 500px;
+  aspect-ratio: 4 / 6;
   display: grid;
   place-items: center;
   overflow: hidden;

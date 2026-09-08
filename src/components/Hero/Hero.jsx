@@ -2,6 +2,7 @@ import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { profile } from '../../data/profile';
 import CircleTransition from '../CircleTransition/CircleTransition';
+import FallingPetals from '../Decorative/FallingPetals';
 import styles from './Hero.module.css';
 
 export default function Hero({ onNavUpdate, onNavLeave }) {
@@ -15,6 +16,8 @@ export default function Hero({ onNavUpdate, onNavLeave }) {
   return (
     <section ref={sectionRef} id="top" className={styles.hero} aria-label={t('hero.coverAria')}>
       <CircleTransition sectionRef={sectionRef} nav={nav}>
+        <FallingPetals />
+
         <div className={styles.ghost} aria-hidden="true" data-hero-fade data-ghost>
           {profile.name.last}
         </div>

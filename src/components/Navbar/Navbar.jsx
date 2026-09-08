@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { profile } from '../../data/profile';
+import { prefersReducedMotion } from '../../utils/motion';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
@@ -14,6 +15,9 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
   const headerRef = useRef(null);
   const overlayRef = useRef(null);
   const linksRef = useRef(null);
+  const branchRef = useRef(null);
+  const branchTimelineRef = useRef(null);
+  const branchSwayRef = useRef(null);
 
   const closeMenu = useCallback(() => onMenuToggle(false), [onMenuToggle]);
 
@@ -49,6 +53,48 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         delay: 0.5,
       });
       overlay.querySelector('a')?.focus({ preventScroll: true });
+
+      const branch = branchRef.current;
+      if (branch && !prefersReducedMotion()) {
+        const group = branch.querySelector('[data-branch-group]');
+        const lines = branch.querySelectorAll('[data-branch-path]');
+        const blossoms = branch.querySelectorAll('[data-branch-blossom]');
+
+        lines.forEach((path) => {
+          const length = path.getTotalLength();
+          gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+        });
+        gsap.set(blossoms, { scale: 0, transformOrigin: 'center' });
+
+        branchTimelineRef.current = gsap
+          .timeline({ delay: 0.4 })
+          .to(lines, {
+            strokeDashoffset: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power2.inOut',
+          })
+          .to(
+            blossoms,
+            {
+              scale: (_i, target) => parseFloat(target.dataset.scale) || 1,
+              duration: 0.55,
+              stagger: 0.06,
+              ease: 'back.out(2.4)',
+            },
+            '-=0.5',
+          )
+          .add(() => {
+            branchSwayRef.current = gsap.to(group, {
+              rotate: 1.6,
+              transformOrigin: '12% 96%',
+              duration: 3.4,
+              repeat: -1,
+              yoyo: true,
+              ease: 'sine.inOut',
+            });
+          });
+      }
     } else {
       document.body.style.overflow = '';
       gsap.set(overlay, { pointerEvents: 'none' });
@@ -63,10 +109,17 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         duration: 0.25,
       });
       burger?.focus({ preventScroll: true });
+
+      branchTimelineRef.current?.kill();
+      branchTimelineRef.current = null;
+      branchSwayRef.current?.kill();
+      branchSwayRef.current = null;
     }
 
     return () => {
       document.body.style.overflow = '';
+      branchTimelineRef.current?.kill();
+      branchSwayRef.current?.kill();
     };
   }, [menuOpen]);
 
@@ -140,7 +193,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         aria-hidden={!menuOpen}
         inert={!menuOpen}
       >
-        <SakuraBranch className={styles.overlay__sakura} />
+        <SakuraBranch ref={branchRef} className={styles.overlay__sakura} />
         <div className={styles.overlay__inner}>
           <p className={`eyebrow ${styles.overlay__label}`} data-menu-fade>
             <span className="jp" lang="ja">{profile.heroJp}</span> {t('nav.navigation')}

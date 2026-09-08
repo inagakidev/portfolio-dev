@@ -26,3 +26,42 @@
   transition: border-color 0.3s;
   overflow: hidden;
 }
+
+.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 2999;
+  background: var(--c-red);
+  mix-blend-mode: multiply;
+  border-radius: 58% 42% 63% 37% / 41% 55% 45% 59%;
+  will-change: transform;
+}
+
+.trail--variantA {
+  border-radius: 65% 35% 55% 45% / 45% 60% 40% 55%;
+}
+
+.trail--variantB {
+  border-radius: 42% 58% 40% 60% / 60% 38% 62% 40%;
+}
+
+.petalLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2998;
+}
+
+.petal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}

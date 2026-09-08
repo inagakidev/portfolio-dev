@@ -186,9 +186,10 @@
 
 .overlay__sakura {
   position: absolute;
-  right: -4%;
-  bottom: -2%;
-  width: min(44vw, 480px);
+  right: 0;
+  bottom: 0;
+  width: min(40vw, 440px);
+  max-height: 90vh;
   color: var(--c-rose);
   transform: scaleX(-1);
 }

@@ -6,11 +6,19 @@ gsap.registerPlugin(ScrollTrigger);
 export function initProjectAnimations(container) {
   const mm = gsap.matchMedia();
 
+  mm.add('(prefers-reduced-motion: reduce)', () => {
+    container.querySelectorAll('[data-project]').forEach((project) => {
+      const panels = project.querySelectorAll('[data-anim="shoji-panel"]');
+      gsap.set(panels, { xPercent: (i) => (i === 0 ? -100 : 100) });
+    });
+  });
+
   mm.add('(prefers-reduced-motion: no-preference)', () => {
     container.querySelectorAll('[data-project]').forEach((project) => {
       const title = project.querySelector('[data-anim="title"]');
       const num = project.querySelectorAll('[data-anim="num"]');
       const image = project.querySelector('[data-anim="image"]');
+      const panels = project.querySelectorAll('[data-anim="shoji-panel"]');
       const text = project.querySelector('[data-anim="text"]');
 
       const tl = gsap.timeline({
@@ -36,12 +44,15 @@ export function initProjectAnimations(container) {
         )
         .fromTo(
           image,
-          {
-            clipPath: 'inset(12% 12% 12% 12%)',
-            scale: 1.07,
-          },
-          { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 1.1 },
+          { scale: 1.07 },
+          { scale: 1, duration: 1.1 },
           '-=0.8',
+        )
+        .fromTo(
+          panels,
+          { xPercent: 0 },
+          { xPercent: (i) => (i === 0 ? -100 : 100), duration: 0.95, ease: 'power4.inOut', stagger: 0.05 },
+          '<',
         )
         .fromTo(
           text,

@@ -5,15 +5,14 @@
   --section-py: 0;
 }
 
-.mark {
-  top: 12%;
-  left: 6%;
-  border-color: rgba(250, 248, 244, 0.5);
-}
-
 .contact :global(.section-head__num) {
   color: var(--c-paper);
+  border-color: var(--c-paper);
   opacity: 0.6;
+}
+
+.contact :global(.section-head__num)::before {
+  border-color: var(--c-paper);
 }
 
 .contact :global(.section-head__line) {
@@ -54,6 +53,28 @@
   font-weight: 300;
   color: rgba(250, 248, 244, 0.94);
   margin-bottom: clamp(2.6rem, 6vh, 4.5rem);
+}
+
+.cv {
+  align-self: flex-start;
+  margin-bottom: clamp(2.6rem, 6vh, 4rem);
+}
+
+.contact :global(.btn--outline) {
+  color: var(--c-paper);
+  border-color: rgba(250, 248, 244, 0.6);
+}
+
+.contact :global(.btn--outline .btn__fill) {
+  background: var(--c-paper);
+}
+
+.contact :global(.btn--outline:hover) {
+  color: var(--c-red);
+}
+
+.cv__icon {
+  font-size: 1.15em;
 }
 
 .links {

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import IntroScreen from './components/IntroScreen/IntroScreen';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -55,6 +56,7 @@ export default function App() {
 
   return (
     <>
+      <IntroScreen />
       <a className="skip-link" href="#main">
         {t('common.skipToContent')}
       </a>

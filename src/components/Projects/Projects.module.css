@@ -112,6 +112,7 @@
 }
 
 .project__media {
+  position: relative;
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 40px 80px -50px rgba(28, 22, 19, 0.45);
@@ -122,6 +123,33 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+.shoji {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.shoji__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--c-paper-deep);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(28, 22, 19, 0.16) 0 1.5px, transparent 1.5px calc(100% / 3)),
+    repeating-linear-gradient(0deg, rgba(28, 22, 19, 0.16) 0 1.5px, transparent 1.5px calc(100% / 4));
+  box-shadow: inset 0 0 0 1px rgba(28, 22, 19, 0.18);
+}
+
+.shoji__panel--left {
+  left: 0;
+}
+
+.shoji__panel--right {
+  right: 0;
 }
 
 .project__media :global(.project-mockup) {

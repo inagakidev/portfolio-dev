@@ -1,7 +1,9 @@
 import { forwardRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { TbArrowUpRight } from "react-icons/tb";
+import { PiScroll } from "react-icons/pi";
 import { profile } from "../../data/profile";
+import TokyoClock from "../Decorative/TokyoClock";
 import styles from "./Contact.module.css";
 
 const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
@@ -36,7 +38,6 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
 
   return (
     <section ref={ref} id="contact" className={`section ${styles.contact}`}>
-      <span className={`mark mark--ring ${styles.mark}`} aria-hidden="true" />
 
       <div className={`section__inner ${styles.inner}`}>
         <div className="section-head">
@@ -61,6 +62,17 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
         <p className={styles.note} data-anim="heading">
           {t("contact.note")}
         </p>
+
+        <a
+          href={profile.cvUrl}
+          download
+          className={`btn btn--outline ${styles.cv}`}
+          data-anim="heading"
+        >
+          <span className="btn__fill" />
+          <PiScroll aria-hidden="true" className={styles.cv__icon} />
+          {t("contact.downloadCV")}
+        </a>
 
         <ul className={styles.links}>
           {LINKS.map((link) => (
@@ -91,6 +103,8 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
               name: `${profile.name.first} ${profile.name.last}`,
             })}
           </p>
+
+          <TokyoClock className={styles.footer__note} />
 
           <button
             type="button"

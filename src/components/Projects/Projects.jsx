@@ -41,6 +41,10 @@ function ProjectItem({ project, index }) {
           {project.image && (
             <img src={project.image} alt={`${project.title} preview`} className={styles.project__img} />
           )}
+          <div className={styles.shoji} aria-hidden="true">
+            <div className={`${styles.shoji__panel} ${styles['shoji__panel--left']}`} data-anim="shoji-panel" />
+            <div className={`${styles.shoji__panel} ${styles['shoji__panel--right']}`} data-anim="shoji-panel" />
+          </div>
         </div>
 
         <div className={styles.project__meta} data-anim="text">
