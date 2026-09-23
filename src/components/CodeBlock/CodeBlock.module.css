@@ -1,0 +1,87 @@
+.window {
+  position: relative;
+  background: var(--c-ink);
+  border: 1px solid rgba(188, 0, 45, 0.25);
+  border-radius: 8px;
+  margin: 1.4rem 0 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -30px rgba(28, 22, 19, 0.5);
+  --syn-tag: #ff8fbf;
+  --syn-attr: #ffd76e;
+  --syn-string: #a7e9a2;
+  --syn-keyword: #ff6b81;
+  --syn-property: #8ec9ff;
+  --syn-function: #c792ea;
+  --syn-comment: #7a8a9b;
+  --syn-number: #f78c6c;
+  --syn-punct: #8a97a6;
+  --syn-plain: #e6edf3;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.title {
+  flex: 1;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.62rem;
+  color: var(--c-paper-deep);
+  opacity: 0.7;
+  text-align: center;
+  margin-right: 3.2rem;
+}
+
+.grip {
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  margin-left: auto;
+}
+
+.body {
+  position: relative;
+  margin: 0;
+  padding: 1.3rem 1.4rem;
+  overflow-x: auto;
+  font-family: 'Consolas', 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: clamp(0.82rem, 1.1vw, 0.92rem);
+  line-height: 1.75;
+  color: var(--c-paper-deep);
+}
+
+.body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--c-red), transparent 60%);
+}
+
+.body code {
+  font-family: inherit;
+  white-space: pre;
+  display: block;
+}

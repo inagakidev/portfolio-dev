@@ -42,7 +42,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
       <div className={`section__inner ${styles.inner}`}>
         <div className="section-head">
           <span className="section-head__label">
-            <span className="section-head__num">04</span>
+            <span className="section-head__num">05</span>
             <span className="eyebrow">{t("contact.eyebrow")}</span>
           </span>
           <span className="jp section-head__jp" aria-hidden="true">

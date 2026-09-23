@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import IntroScreen from './components/IntroScreen/IntroScreen';
 import Navbar from './components/Navbar/Navbar';
@@ -10,8 +11,9 @@ import Contact from './components/Contact/Contact';
 import CustomCursor from './components/CustomCursor/CustomCursor';
 import { initScrollAnimations } from './animations/scrollAnimations';
 
-export default function App() {
+function Portfolio() {
   const { t } = useTranslation();
+
   const [navTheme, setNavTheme] = useState('ink');
   const [navHidden, setNavHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +21,7 @@ export default function App() {
   const aboutRef = useRef(null);
   const stackRef = useRef(null);
   const projectsRef = useRef(null);
+  const articlesRef = useRef(null);
   const contactRef = useRef(null);
 
   useEffect(() => {
@@ -26,6 +29,7 @@ export default function App() {
       aboutRef,
       stackRef,
       projectsRef,
+      articlesRef,
       contactRef,
       onThemeChange: setNavTheme,
     });
@@ -76,5 +80,16 @@ export default function App() {
         <Contact ref={contactRef} onBackToTop={handleBackToTop} />
       </main>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/articles/:slug" element={<ArticleLayout />} />
+        <Route path="*" element={<Portfolio />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

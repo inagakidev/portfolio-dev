@@ -1,24 +1,11 @@
 import telaForaDoJogo from '../assets/images/telaForaDoJogo.png';
 import telamrbeagle from '../assets/images/telamrbeagle.png';
+import telasixt from '../assets/images/telasixt.png';
 
 export const projects = [
   {
-    id: 'fora-do-jogo',
-    number: '01',
-    title: 'FORA DO\u00A0JOGO',
-    jp: 'ゲームの外',
-    year: '2026',
-    accent: '#c8102e',
-    accentSoft: '#f2d8d9',
-    techs: ['React', 'Node.js', 'Tailwind', 'PostgreSQL'],
-    image: telaForaDoJogo,
-    links: {
-      url: 'foradojogo',
-    },
-  },
-  {
     id: 'mr-beagles',
-    number: '02',
+    number: '01',
     title: 'MR BEAGLES',
     jp: 'ミスタービーグル',
     year: '2025',
@@ -29,5 +16,17 @@ export const projects = [
     links: {
       url: 'mrbeagle',
     },
+  },
+  {
+    id: 'sixt',
+    number: '02',
+    title: 'SIXT',
+    jp: 'シックスト',
+    year: '2026',
+    accent: '#FF5F00',
+    accentSoft: '#FFF0E5',
+    techs: ['React', 'GSAP', 'ScrollTrigger'],
+    image: telasixt,
+    links: {},
   },
 ];

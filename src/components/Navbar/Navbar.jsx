@@ -7,7 +7,7 @@ import SakuraBranch from '../Decorative/SakuraBranch';
 import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
-const NAV_IDS = ['about', 'stack', 'projects', 'contact'];
+const NAV_IDS = ['about', 'stack', 'projects', 'articles', 'contact'];
 const LANGUAGES = ['en', 'pt', 'ja'];
 
 export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenuToggle }) {
@@ -219,6 +219,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
                       {id === 'about' && '私'}
                       {id === 'stack' && '道具'}
                       {id === 'projects' && '作品'}
+                      {id === 'articles' && '記事'}
                       {id === 'contact' && '連絡'}
                     </span>
                   </a>

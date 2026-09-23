@@ -1,4 +1,5 @@
 import portraitImg from '../assets/images/amandaPerfil.png';
+import cvPdf from '../assets/curriculo-amanda-inagaki.pdf';
 
 export const profile = {
   name: {
@@ -10,7 +11,7 @@ export const profile = {
   year: 2026,
   heroJp: '創る',
   portrait: portraitImg,
-  cvUrl: '/cv/amanda-inagaki-cv.pdf',
+  cvUrl: cvPdf,
   socials: {
     email: 'inagakilanding@gmail.com',
     github: 'https://github.com/inagakidev',
