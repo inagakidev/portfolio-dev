@@ -87,7 +87,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/articles/:slug" element={<ArticleLayout />} />
         <Route path="*" element={<Portfolio />} />
       </Routes>
     </BrowserRouter>

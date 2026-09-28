@@ -14,7 +14,7 @@ export const projects = [
     techs: ['HTML', 'CSS', 'JavaScript'],
     image: telamrbeagle,
     links: {
-      url: 'mrbeagle',
+      url: 'https://sitebeagles.vercel.app/',
     },
   },
   {
@@ -27,6 +27,8 @@ export const projects = [
     accentSoft: '#FFF0E5',
     techs: ['React', 'GSAP', 'ScrollTrigger'],
     image: telasixt,
-    links: {},
+    links: {
+      url: 'https://sixt-five.vercel.app/',
+    },
   },
 ];
