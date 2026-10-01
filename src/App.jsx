@@ -21,7 +21,6 @@ function Portfolio() {
   const aboutRef = useRef(null);
   const stackRef = useRef(null);
   const projectsRef = useRef(null);
-  const articlesRef = useRef(null);
   const contactRef = useRef(null);
 
   useEffect(() => {
@@ -29,7 +28,6 @@ function Portfolio() {
       aboutRef,
       stackRef,
       projectsRef,
-      articlesRef,
       contactRef,
       onThemeChange: setNavTheme,
     });

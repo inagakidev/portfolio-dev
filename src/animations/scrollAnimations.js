@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initScrollAnimations({ aboutRef, stackRef, projectsRef, articlesRef, contactRef, onThemeChange }) {
+export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactRef, onThemeChange }) {
   const mm = gsap.matchMedia();
 
   mm.add('(prefers-reduced-motion: no-preference)', () => {
@@ -22,7 +22,7 @@ export function initScrollAnimations({ aboutRef, stackRef, projectsRef, articles
       },
     );
 
-    const sections = [aboutRef, stackRef, projectsRef, articlesRef, contactRef]
+    const sections = [aboutRef, stackRef, projectsRef, contactRef]
       .map((r) => r?.current)
       .filter(Boolean);
 
