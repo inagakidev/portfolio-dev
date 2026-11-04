@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import IntroScreen from './components/IntroScreen/IntroScreen';
 import Navbar from './components/Navbar/Navbar';
@@ -82,11 +81,5 @@ function Portfolio() {
 }
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Portfolio />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <Portfolio />;
 }
