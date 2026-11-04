@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+import { gsap } from '../../lib/gsap';
 import { prefersReducedMotion } from '../../utils/motion';
 import { PETAL_PATH } from '../Decorative/petalPath';
 import styles from './CustomCursor.module.css';

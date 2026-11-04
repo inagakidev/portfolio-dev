@@ -1,7 +1,4 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, ScrollTrigger } from '../lib/gsap';
 
 export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactRef, onThemeChange }) {
   const mm = gsap.matchMedia();
@@ -107,16 +104,17 @@ export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactR
 
   // Troca o tema da navbar quando a seção de contato entra/sai da viewport
   // ("paper" sobre o fundo vermelho, "ink" no restante da página).
-  if (contactRef?.current) {
-    ScrollTrigger.create({
-      trigger: contactRef.current,
-      start: 'top 60%',
-      onEnter: () => onThemeChange('paper'),
-      onLeaveBack: () => onThemeChange('ink'),
-    });
-  }
+  const themeTrigger = contactRef?.current
+    ? ScrollTrigger.create({
+        trigger: contactRef.current,
+        start: 'top 60%',
+        onEnter: () => onThemeChange('paper'),
+        onLeaveBack: () => onThemeChange('ink'),
+      })
+    : null;
 
   return () => {
+    themeTrigger?.kill();
     mm.revert();
   };
 }

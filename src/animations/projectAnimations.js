@@ -1,7 +1,4 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from '../lib/gsap';
 
 export function initProjectAnimations(container) {
   const mm = gsap.matchMedia();

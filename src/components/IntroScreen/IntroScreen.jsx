@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap, ScrollTrigger } from '../../lib/gsap';
 import { profile } from '../../data/profile';
 import { prefersReducedMotion } from '../../utils/motion';
 import styles from './IntroScreen.module.css';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const STORAGE_KEY = 'portfolio.introShown';
 

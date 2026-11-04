@@ -1,12 +1,9 @@
 import { forwardRef, useRef, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from '../../lib/gsap';
 import { TbFlower } from 'react-icons/tb';
 import { stack } from '../../data/stack';
 import styles from './Skills.module.css';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const MARQUEE_ITEMS = [...stack.marquee, ...stack.marquee];
 

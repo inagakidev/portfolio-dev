@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { gsap } from 'gsap';
+import { gsap } from '../../lib/gsap';
+import { changeLanguage } from '../../i18n';
 import { profile } from '../../data/profile';
 import { prefersReducedMotion } from '../../utils/motion';
 import SakuraBranch from '../Decorative/SakuraBranch';
@@ -175,7 +176,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
                   type="button"
                   className={`${styles.lang__btn} ${active ? styles['lang__btn--active'] : ''}`}
                   aria-pressed={active}
-                  onClick={() => i18n.changeLanguage(code)}
+                  onClick={() => changeLanguage(code)}
                 >
                   {code.toUpperCase()}
                 </button>
@@ -240,7 +241,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
                     type="button"
                     className={`${styles.lang__btn} ${active ? styles['lang__btn--active'] : ''}`}
                     aria-pressed={active}
-                    onClick={() => i18n.changeLanguage(code)}
+                    onClick={() => changeLanguage(code)}
                   >
                     {code.toUpperCase()}
                   </button>
