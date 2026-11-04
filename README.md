@@ -39,17 +39,25 @@ npm run dev
 ```
 src/
 ├── animations/      # Lógica de animação (hero, scroll, projects)
-├── assets/          # Imagens e fontes
+├── assets/
+│   └── images/optimized/  # AVIF/WebP/JPG gerados a partir dos originais
 ├── components/      # Componentes React organizados por seção
+│   ├── ui/          # Componentes reutilizáveis (ResponsiveImage)
 │   ├── About/
 │   ├── Contact/
 │   ├── Hero/
 │   ├── Navbar/
 │   ├── Projects/
 │   └── Skills/
-├── data/            # Dados de projetos, stack e perfil
-└── i18n.js          # Traduções (português, inglês, japonês)
+├── data/            # Perfil, projetos, stack e metadados das imagens
+├── i18n/            # Configuração e locales (en, pt, ja)
+├── lib/             # Setup compartilhado do GSAP
+└── utils/
 ```
+
+As imagens em `src/assets/images/optimized/` são geradas a partir dos
+originais com `ffmpeg` e entregues via `srcset` em AVIF/WebP, com fallback
+em JPG/PNG.
 
 ## Autora
 
