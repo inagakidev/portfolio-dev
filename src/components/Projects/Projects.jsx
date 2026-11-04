@@ -4,6 +4,7 @@ import { TbArrowUpRight } from 'react-icons/tb';
 import { projects } from '../../data/projects';
 import { initProjectAnimations } from '../../animations/projectAnimations';
 import SakuraBlossom from '../Decorative/SakuraBlossom';
+import ResponsiveImage from '../ui/ResponsiveImage';
 import styles from './Projects.module.css';
 
 function ProjectItem({ project, index }) {
@@ -39,7 +40,12 @@ function ProjectItem({ project, index }) {
       <div className={styles.project__body}>
         <div className={styles.project__media} data-anim="image">
           {project.image && (
-            <img src={project.image} alt={`${project.title} preview`} className={styles.project__img} />
+            <ResponsiveImage
+              image={project.image}
+              alt={`${project.title} preview`}
+              className={styles.project__img}
+              sizes="(max-width: 960px) 100vw, 50vw"
+            />
           )}
           <div className={styles.shoji} aria-hidden="true">
             <div className={`${styles.shoji__panel} ${styles['shoji__panel--left']}`} data-anim="shoji-panel" />
@@ -69,15 +75,17 @@ function ProjectItem({ project, index }) {
                 <span aria-hidden="true"><TbArrowUpRight /></span>
               </a>
             ) : null}
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn--outline"
-            >
-              <span className="btn__fill" />
-              {t('projects.github')}
-            </a>
+            {project.links.github ? (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn--outline"
+              >
+                <span className="btn__fill" />
+                {t('projects.github')}
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

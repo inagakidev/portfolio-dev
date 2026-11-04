@@ -1,6 +1,4 @@
-import telaForaDoJogo from '../assets/images/telaForaDoJogo.png';
-import telamrbeagle from '../assets/images/telamrbeagle.png';
-import telasixt from '../assets/images/telasixt.png';
+import { projectImages } from './images';
 
 export const projects = [
   {
@@ -9,10 +7,8 @@ export const projects = [
     title: 'MR BEAGLES',
     jp: 'ミスタービーグル',
     year: '2025',
-    accent: '#8B4513',
-    accentSoft: '#f5e6d3',
     techs: ['HTML', 'CSS', 'JavaScript'],
-    image: telamrbeagle,
+    image: projectImages['mr-beagles'],
     links: {
       url: 'https://sitebeagles.vercel.app/',
     },
@@ -23,10 +19,8 @@ export const projects = [
     title: 'SIXT',
     jp: 'シックスト',
     year: '2026',
-    accent: '#FF5F00',
-    accentSoft: '#FFF0E5',
     techs: ['React', 'GSAP', 'ScrollTrigger'],
-    image: telasixt,
+    image: projectImages.sixt,
     links: {
       url: 'https://sixt-five.vercel.app/',
     },

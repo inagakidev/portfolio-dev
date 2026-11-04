@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { initHeroAnimation } from "../../animations/heroAnimation";
 import { profile } from "../../data/profile";
+import ResponsiveImage from "../ui/ResponsiveImage";
 import styles from "./CircleTransition.module.css";
-import portrait from "../../assets/images/amandaPerfil.png";
 
 export default function CircleTransition({ sectionRef, nav, children }) {
   const { t } = useTranslation();
@@ -46,8 +46,15 @@ export default function CircleTransition({ sectionRef, nav, children }) {
           </p>
         </div>
         <div className={styles.circle__face} data-circle-fade>
-          {portrait ? (
-            <img src={portrait} alt="" className={styles.circle__img} />
+          {profile.portrait ? (
+            <ResponsiveImage
+              image={profile.portrait}
+              alt=""
+              className={styles.circle__img}
+              sizes="(max-width: 720px) 60vw, 480px"
+              loading="eager"
+              fetchPriority="high"
+            />
           ) : (
             <span className={styles.circle__monogram}>
               {profile.name.monogram}
