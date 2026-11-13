@@ -15,7 +15,6 @@ function Portfolio() {
 
   const [navTheme, setNavTheme] = useState('ink');
   const [navHidden, setNavHidden] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const aboutRef = useRef(null);
   const stackRef = useRef(null);
@@ -63,7 +62,7 @@ function Portfolio() {
       </a>
       <div className="scroll-progress" aria-hidden="true" />
       <CustomCursor />
-      <Navbar theme={navTheme} hidden={navHidden} menuOpen={menuOpen} onMenuToggle={setMenuOpen} />
+      <Navbar theme={navTheme} hidden={navHidden} />
       <main id="main">
         <Hero onNavUpdate={handleHeroNavUpdate} onNavLeave={handleHeroNavLeave} />
         <About ref={aboutRef} />

@@ -1,16 +1,19 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from '../../lib/gsap';
 import { profile } from '../../data/profile';
 import { sections } from '../../data/sections';
 import { prefersReducedMotion } from '../../utils/motion';
+import { useScrollLock } from '../../hooks/useScrollLock';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 
-export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenuToggle }) {
+export default function Navbar({ theme = 'ink', hidden = false }) {
   const { t } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const wasOpenRef = useRef(false);
   const headerRef = useRef(null);
   const overlayRef = useRef(null);
   const linksRef = useRef(null);
@@ -18,7 +21,9 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
   const branchTimelineRef = useRef(null);
   const branchSwayRef = useRef(null);
 
-  const closeMenu = useCallback(() => onMenuToggle(false), [onMenuToggle]);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  useScrollLock(menuOpen);
 
   useEffect(() => {
     const overlay = overlayRef.current;
@@ -26,7 +31,6 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
     const burger = headerRef.current?.querySelector('button');
 
     if (menuOpen) {
-      document.body.style.overflow = 'hidden';
       gsap.set(overlay, { pointerEvents: 'auto' });
       gsap.to(overlay, {
         clipPath: 'inset(0% 0% 0% 0%)',
@@ -95,7 +99,6 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
           });
       }
     } else {
-      document.body.style.overflow = '';
       gsap.set(overlay, { pointerEvents: 'none' });
       gsap.to(overlay, {
         clipPath: 'inset(0% 0% 100% 0%)',
@@ -107,7 +110,8 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         opacity: 0,
         duration: 0.25,
       });
-      burger?.focus({ preventScroll: true });
+      // Devolve o foco ao botão só quando o menu estava aberto, não na montagem.
+      if (wasOpenRef.current) burger?.focus({ preventScroll: true });
 
       branchTimelineRef.current?.kill();
       branchTimelineRef.current = null;
@@ -115,8 +119,9 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
       branchSwayRef.current = null;
     }
 
+    wasOpenRef.current = menuOpen;
+
     return () => {
-      document.body.style.overflow = '';
       branchTimelineRef.current?.kill();
       branchSwayRef.current?.kill();
     };
@@ -160,7 +165,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
             aria-label={menuOpen ? t('common.menuClose') : t('common.menuOpen')}
             aria-expanded={menuOpen}
             aria-controls="nav-overlay"
-            onClick={() => onMenuToggle(!menuOpen)}
+            onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? <RxCross1 /> : <RxHamburgerMenu />}
           </button>
