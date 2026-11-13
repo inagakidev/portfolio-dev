@@ -1,4 +1,5 @@
 import { gsap } from '../lib/gsap';
+import { revealHeadings } from './sectionAnimations';
 
 export function initProjectAnimations(container) {
   const mm = gsap.matchMedia();
@@ -11,6 +12,8 @@ export function initProjectAnimations(container) {
   });
 
   mm.add('(prefers-reduced-motion: no-preference)', () => {
+    revealHeadings(container);
+
     container.querySelectorAll('[data-project]').forEach((project) => {
       const title = project.querySelector('[data-anim="title"]');
       const num = project.querySelectorAll('[data-anim="num"]');
