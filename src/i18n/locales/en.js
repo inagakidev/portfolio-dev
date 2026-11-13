@@ -83,11 +83,6 @@ const en = {
     visit: 'Visit',
     github: 'Code',
     list: {
-      'fora-do-jogo': {
-        category: 'Front-end · Articles Platform',
-        description:
-          "A platform where anyone can publish articles about the internet, going through a review process before going live. The content focuses on the real impact of the internet on people's lives, both the benefits and the risks. Every text goes through a verification to ensure the information is reliable.",
-      },
       'mr-beagles': {
         category: 'Front-end · Pet Services',
         description:
@@ -97,11 +92,6 @@ const en = {
         category: 'Front-end · Car Rental',
         description:
           "Landing page for Sixt built in React with scroll-driven animations powered by GSAP. Designed with a focus on connection, ease of use, and performance — giving users a smooth and immersive way to explore Sixt's services and brand identity.",
-      },
-      'kami-notes': {
-        category: 'Full-stack',
-        description:
-          'A markdown note-taking app focused on simplicity. Keyboard-only navigation, real-time sync. Inspired by the aesthetic of Japanese washi paper.',
       },
       'hanami-sounds': {
         category: 'Creative Dev',
