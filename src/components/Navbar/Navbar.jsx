@@ -6,7 +6,7 @@ import { profile } from '../../data/profile';
 import { prefersReducedMotion } from '../../utils/motion';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import styles from './Navbar.module.css';
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 
 const NAV_IDS = ['about', 'stack', 'projects', 'contact'];
 const LANGUAGES = ['en', 'pt', 'ja'];
@@ -197,7 +197,10 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         <SakuraBranch ref={branchRef} className={styles.overlay__sakura} />
         <div className={styles.overlay__inner}>
           <p className={`eyebrow ${styles.overlay__label}`} data-menu-fade>
-            <span className="jp" lang="ja">{profile.heroJp}</span> {t('nav.navigation')}
+            <span className="jp" lang="ja">
+              {profile.heroJp}
+            </span>{' '}
+            {t('nav.navigation')}
           </p>
           <nav aria-label={t('common.menu')}>
             <ul ref={linksRef}>
@@ -231,7 +234,9 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
             <a className="link-line" href={`mailto:${profile.socials.email}`}>
               {profile.socials.email}
             </a>
-            <span className={`jp ${styles.overlay__footjp}`} lang="ja">{t('contact.footerNote')}</span>
+            <span className={`jp ${styles.overlay__footjp}`} lang="ja">
+              {t('contact.footerNote')}
+            </span>
             <div className={styles.lang} role="group" aria-label={t('nav.langLabel')}>
               {LANGUAGES.map((code) => {
                 const active = i18n.resolvedLanguage === code;

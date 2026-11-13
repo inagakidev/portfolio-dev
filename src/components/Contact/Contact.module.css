@@ -75,7 +75,9 @@
   gap: clamp(0.9rem, 2vw, 1.8rem);
   padding: clamp(0.85rem, 2.2vh, 1.3rem) 0.2rem;
   color: var(--c-paper);
-  transition: background-color 0.35s var(--ease-out), color 0.35s var(--ease-out);
+  transition:
+    background-color 0.35s var(--ease-out),
+    color 0.35s var(--ease-out);
 }
 
 .links__item:hover {
@@ -173,7 +175,10 @@
   border: 1px solid rgba(250, 248, 244, 0.6);
   border-radius: 50%;
   font-size: 1.05rem;
-  transition: background 0.35s, color 0.35s, transform 0.35s var(--ease-out);
+  transition:
+    background 0.35s,
+    color 0.35s,
+    transform 0.35s var(--ease-out);
 }
 
 .backTop:hover .backTop__arrow {

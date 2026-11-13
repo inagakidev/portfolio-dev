@@ -176,7 +176,8 @@ export default function CustomCursor() {
     <>
       <div ref={petalLayerRef} className={styles.petalLayer} aria-hidden="true" />
       {Array.from({ length: TRAIL_COUNT }, (_, i) => {
-        const variant = i % 3 === 0 ? styles['trail--variantA'] : i % 3 === 2 ? styles['trail--variantB'] : '';
+        const variant =
+          i % 3 === 0 ? styles['trail--variantA'] : i % 3 === 2 ? styles['trail--variantB'] : '';
         return (
           <div
             key={i}

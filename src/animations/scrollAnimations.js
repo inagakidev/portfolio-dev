@@ -1,6 +1,12 @@
 import { gsap, ScrollTrigger } from '../lib/gsap';
 
-export function initScrollAnimations({ aboutRef, stackRef, projectsRef, contactRef, onThemeChange }) {
+export function initScrollAnimations({
+  aboutRef,
+  stackRef,
+  projectsRef,
+  contactRef,
+  onThemeChange,
+}) {
   const mm = gsap.matchMedia();
 
   mm.add('(prefers-reduced-motion: no-preference)', () => {

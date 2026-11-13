@@ -10,22 +10,22 @@ O projeto nasceu da vontade de criar algo que não parecesse um portfólio gené
 
 ## O que tem
 
-* Animações de scroll com GSAP e ScrollTrigger
-* Sistema de internacionalização (PT, EN, JA)
-* Layout responsivo com mobile first
-* Marquee com ícones de flor (react-icons)
-* Menu overlay com transições suaves
-* Custom cursor
-* Tema com cores do Japão
+- Animações de scroll com GSAP e ScrollTrigger
+- Sistema de internacionalização (PT, EN, JA)
+- Layout responsivo com mobile first
+- Marquee com ícones de flor (react-icons)
+- Menu overlay com transições suaves
+- Custom cursor
+- Tema com cores do Japão
 
 ## Tech Stack
 
-* React 19
-* Vite
-* GSAP
-* i18next
-* react-icons
-* CSS Modules
+- React 19
+- Vite
+- GSAP
+- i18next
+- react-icons
+- CSS Modules
 
 ## Como rodar
 

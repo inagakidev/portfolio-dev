@@ -34,7 +34,9 @@ function ProjectItem({ project, index }) {
             ))}
           </h3>
         </div>
-        <span className={`jp ${styles.project__jp}`} aria-hidden="true">{project.jp}</span>
+        <span className={`jp ${styles.project__jp}`} aria-hidden="true">
+          {project.jp}
+        </span>
       </header>
 
       <div className={styles.project__body}>
@@ -48,8 +50,14 @@ function ProjectItem({ project, index }) {
             />
           )}
           <div className={styles.shoji} aria-hidden="true">
-            <div className={`${styles.shoji__panel} ${styles['shoji__panel--left']}`} data-anim="shoji-panel" />
-            <div className={`${styles.shoji__panel} ${styles['shoji__panel--right']}`} data-anim="shoji-panel" />
+            <div
+              className={`${styles.shoji__panel} ${styles['shoji__panel--left']}`}
+              data-anim="shoji-panel"
+            />
+            <div
+              className={`${styles.shoji__panel} ${styles['shoji__panel--right']}`}
+              data-anim="shoji-panel"
+            />
           </div>
         </div>
 
@@ -58,7 +66,9 @@ function ProjectItem({ project, index }) {
           <p className={styles.project__desc}>{t(`projects.list.${project.id}.description`)}</p>
           <ul className={styles.project__techs} aria-label={t('projects.techsAria')}>
             {project.techs.map((tech) => (
-              <li key={tech} className={styles.project__tech}>{tech}</li>
+              <li key={tech} className={styles.project__tech}>
+                {tech}
+              </li>
             ))}
           </ul>
           <div className={styles.project__links}>
@@ -72,7 +82,9 @@ function ProjectItem({ project, index }) {
               >
                 <span className="btn__fill" />
                 {t('projects.visit')}
-                <span aria-hidden="true"><TbArrowUpRight /></span>
+                <span aria-hidden="true">
+                  <TbArrowUpRight />
+                </span>
               </a>
             ) : null}
             {project.links.github ? (
@@ -110,7 +122,9 @@ const Projects = forwardRef(function Projects(_props, ref) {
             <span className="section-head__num">03</span>
             <span className="eyebrow">{t('projects.eyebrow')}</span>
           </span>
-          <span className="jp section-head__jp" aria-hidden="true">作品</span>
+          <span className="jp section-head__jp" aria-hidden="true">
+            作品
+          </span>
         </div>
 
         <h2 className={`section-heading ${styles.heading}`}>

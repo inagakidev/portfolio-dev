@@ -11,8 +11,11 @@
   height: var(--nav-h);
   padding: 0 var(--gutter);
   color: var(--c-ink);
-  transition: opacity 0.5s var(--ease-out), color 0.5s var(--ease-out),
-    transform 0.5s var(--ease-out), background-color 0.5s;
+  transition:
+    opacity 0.5s var(--ease-out),
+    color 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out),
+    background-color 0.5s;
 }
 
 .nav--hidden {
@@ -104,7 +107,9 @@
   padding: 0.45rem 0.75rem;
   cursor: pointer;
   opacity: 0.5;
-  transition: opacity 0.3s, color 0.3s;
+  transition:
+    opacity 0.3s,
+    color 0.3s;
   position: relative;
 }
 
@@ -136,7 +141,9 @@
 }
 
 .lang__btn:focus-visible {
-  box-shadow: 0 0 0 2px var(--c-paper), 0 0 0 4px var(--c-red);
+  box-shadow:
+    0 0 0 2px var(--c-paper),
+    0 0 0 4px var(--c-red);
   border-radius: 999px;
 }
 
@@ -158,7 +165,9 @@
   height: 40px;
   font-size: 1.2rem;
   opacity: 0.85;
-  transition: opacity 0.3s, transform 0.5s var(--ease-out);
+  transition:
+    opacity 0.3s,
+    transform 0.5s var(--ease-out);
 }
 
 .burger:hover {
@@ -241,7 +250,9 @@
   font-size: clamp(2.4rem, 8vw, 5.2rem);
   line-height: 1.1;
   letter-spacing: 0.01em;
-  transition: color 0.35s, transform 0.5s var(--ease-out);
+  transition:
+    color 0.35s,
+    transform 0.5s var(--ease-out);
   display: inline-block;
   transform-origin: 0 100%;
 }

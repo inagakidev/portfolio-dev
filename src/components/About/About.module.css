@@ -73,10 +73,8 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  -webkit-mask-image:
-    radial-gradient(ellipse 75% 70% at 50% 35%, black 45%, transparent 100%);
-  mask-image:
-    radial-gradient(ellipse 75% 70% at 50% 35%, black 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, black 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, black 45%, transparent 100%);
 }
 
 .portrait__ring {

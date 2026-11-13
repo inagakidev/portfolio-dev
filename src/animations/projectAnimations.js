@@ -28,35 +28,26 @@ export function initProjectAnimations(container) {
         },
       });
 
-      tl.fromTo(
-        title,
-        { yPercent: 115 },
-        { yPercent: 0, duration: 1.05, ease: 'power4.out' },
-      )
+      tl.fromTo(title, { yPercent: 115 }, { yPercent: 0, duration: 1.05, ease: 'power4.out' })
         .fromTo(
           num,
           { xPercent: 24, opacity: 0 },
           { xPercent: 0, opacity: 1, duration: 0.9, stagger: 0.06 },
           '-=0.7',
         )
-        .fromTo(
-          image,
-          { scale: 1.07 },
-          { scale: 1, duration: 1.1 },
-          '-=0.8',
-        )
+        .fromTo(image, { scale: 1.07 }, { scale: 1, duration: 1.1 }, '-=0.8')
         .fromTo(
           panels,
           { xPercent: 0 },
-          { xPercent: (i) => (i === 0 ? -100 : 100), duration: 0.95, ease: 'power4.inOut', stagger: 0.05 },
+          {
+            xPercent: (i) => (i === 0 ? -100 : 100),
+            duration: 0.95,
+            ease: 'power4.inOut',
+            stagger: 0.05,
+          },
           '<',
         )
-        .fromTo(
-          text,
-          { y: 34, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.85 },
-          '-=0.85',
-        );
+        .fromTo(text, { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, '-=0.85');
     });
   });
 

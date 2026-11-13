@@ -77,8 +77,16 @@ export default function IntroScreen() {
   return (
     <div className={styles.intro} role="status" aria-live="polite">
       <span className={styles.srOnly}>{t('common.loading')}</span>
-      <div ref={panelLeftRef} className={`${styles.panel} ${styles.panelLeft}`} aria-hidden="true" />
-      <div ref={panelRightRef} className={`${styles.panel} ${styles.panelRight}`} aria-hidden="true" />
+      <div
+        ref={panelLeftRef}
+        className={`${styles.panel} ${styles.panelLeft}`}
+        aria-hidden="true"
+      />
+      <div
+        ref={panelRightRef}
+        className={`${styles.panel} ${styles.panelRight}`}
+        aria-hidden="true"
+      />
       <span ref={kanjiRef} className={`jp ${styles.kanji}`} lang="ja" aria-hidden="true">
         {profile.heroJp}
       </span>

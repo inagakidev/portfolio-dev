@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --c-red: #BC002D;
-  --c-red-deep: #8A0021;
-  --c-red-soft: #C94040;
+  --c-red: #bc002d;
+  --c-red-deep: #8a0021;
+  --c-red-soft: #c94040;
   --c-ink: #1c1613;
   --c-ink-soft: #574a43;
   --c-paper: #ffffff;
@@ -10,8 +10,7 @@
   --c-blush: #f5ebe5;
   --c-rose: #e8d5cf;
 
-  --font-serif: 'Zen Old Mincho', 'Noto Serif JP', Georgia, 'Times New Roman',
-    serif;
+  --font-serif: 'Zen Old Mincho', 'Noto Serif JP', Georgia, 'Times New Roman', serif;
   --font-sans: 'Archivo', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   --font-condensed: 'Oswald', 'Arial Narrow', sans-serif;
 
@@ -197,7 +196,9 @@ ol {
   font-weight: 500;
   line-height: 1;
   border-radius: 999px;
-  transition: color 0.35s var(--ease-out), border-color 0.35s var(--ease-out),
+  transition:
+    color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
     transform 0.35s var(--ease-out);
   isolation: isolate;
 }

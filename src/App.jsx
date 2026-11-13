@@ -63,12 +63,7 @@ function Portfolio() {
       </a>
       <div className="scroll-progress" aria-hidden="true" />
       <CustomCursor />
-      <Navbar
-        theme={navTheme}
-        hidden={navHidden}
-        menuOpen={menuOpen}
-        onMenuToggle={setMenuOpen}
-      />
+      <Navbar theme={navTheme} hidden={navHidden} menuOpen={menuOpen} onMenuToggle={setMenuOpen} />
       <main id="main">
         <Hero onNavUpdate={handleHeroNavUpdate} onNavLeave={handleHeroNavLeave} />
         <About ref={aboutRef} />

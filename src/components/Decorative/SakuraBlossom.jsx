@@ -1,4 +1,5 @@
-const BLOSSOM_PETAL = 'M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z';
+const BLOSSOM_PETAL =
+  'M0 0 C -3.5 -2.6 -5 -7.2 -3 -11.6 C -1.2 -15.2 1.2 -15.2 3 -11.6 C 5 -7.2 3.5 -2.6 0 0 Z';
 const STAMEN = 'M0 0 L0 -4.6';
 
 export default function SakuraBlossom({ size = 48, className = '', style }) {
