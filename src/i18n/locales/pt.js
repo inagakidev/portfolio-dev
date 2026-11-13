@@ -6,6 +6,7 @@ const pt = {
   },
   common: {
     skipToContent: 'Pular para o conteúdo',
+    loading: 'Carregando…',
     menu: 'Menu',
     menuOpen: 'Abrir menu',
     menuClose: 'Fechar menu',
@@ -79,6 +80,7 @@ const pt = {
       'Uma seleção do que já construí. Cada projeto resolve um problema específico com atenção ao detalhe e à experiência final.',
     projectLabel: 'Projeto — {{num}}',
     techsAria: 'Tecnologias utilizadas',
+    imageAlt: 'Prévia do projeto {{title}}',
     visit: 'Ver ao vivo',
     github: 'Código',
     list: {

@@ -6,6 +6,7 @@ const ja = {
   },
   common: {
     skipToContent: '本文へスキップ',
+    loading: '読み込み中…',
     menu: 'メニュー',
     menuOpen: 'メニューを開く',
     menuClose: 'メニューを閉じる',
@@ -79,6 +80,7 @@ const ja = {
       '私が構築したものから選りすぐり。それぞれのプロジェクトは、ディテールと最終的な体験に配慮しながら、特定の問題を解決しています。',
     projectLabel: 'プロジェクト — {{num}}',
     techsAria: '使用技術',
+    imageAlt: '{{title}} のプレビュー',
     visit: 'サイトを見る',
     github: 'コード',
     list: {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 import { profile } from '../../data/profile';
 import { prefersReducedMotion } from '../../utils/motion';
@@ -6,8 +7,26 @@ import styles from './IntroScreen.module.css';
 
 const STORAGE_KEY = 'portfolio.introShown';
 
+// sessionStorage pode lançar erro em navegação privada ou com storage bloqueado.
+function hasSeenIntro() {
+  try {
+    return Boolean(window.sessionStorage.getItem(STORAGE_KEY));
+  } catch {
+    return false;
+  }
+}
+
+function markIntroSeen() {
+  try {
+    window.sessionStorage.setItem(STORAGE_KEY, '1');
+  } catch {
+    // Sem storage, a intro apenas volta a aparecer no próximo carregamento.
+  }
+}
+
 export default function IntroScreen() {
-  const [visible] = useState(() => !window.sessionStorage.getItem(STORAGE_KEY));
+  const { t } = useTranslation();
+  const [visible] = useState(() => !hasSeenIntro());
   const kanjiRef = useRef(null);
   const panelLeftRef = useRef(null);
   const panelRightRef = useRef(null);
@@ -16,7 +35,7 @@ export default function IntroScreen() {
   useEffect(() => {
     if (!visible) return;
 
-    window.sessionStorage.setItem(STORAGE_KEY, '1');
+    markIntroSeen();
     document.body.style.overflow = 'hidden';
 
     const finish = () => {
@@ -57,7 +76,7 @@ export default function IntroScreen() {
 
   return (
     <div className={styles.intro} role="status" aria-live="polite">
-      <span className={styles.srOnly}>Loading…</span>
+      <span className={styles.srOnly}>{t('common.loading')}</span>
       <div ref={panelLeftRef} className={`${styles.panel} ${styles.panelLeft}`} aria-hidden="true" />
       <div ref={panelRightRef} className={`${styles.panel} ${styles.panelRight}`} aria-hidden="true" />
       <span ref={kanjiRef} className={`jp ${styles.kanji}`} lang="ja" aria-hidden="true">

@@ -6,6 +6,7 @@ const en = {
   },
   common: {
     skipToContent: 'Skip to content',
+    loading: 'Loading…',
     menu: 'Menu',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
@@ -79,6 +80,7 @@ const en = {
       "A selection of what I've built. Each project solves a specific problem with attention to detail and the final experience.",
     projectLabel: 'Project — {{num}}',
     techsAria: 'Technologies used',
+    imageAlt: '{{title}} preview',
     visit: 'Visit',
     github: 'Code',
     list: {

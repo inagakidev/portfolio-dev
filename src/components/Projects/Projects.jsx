@@ -42,7 +42,7 @@ function ProjectItem({ project, index }) {
           {project.image && (
             <ResponsiveImage
               image={project.image}
-              alt={`${project.title} preview`}
+              alt={t('projects.imageAlt', { title: project.title })}
               className={styles.project__img}
               sizes="(max-width: 960px) 100vw, 50vw"
             />
