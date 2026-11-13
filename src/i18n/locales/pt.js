@@ -83,11 +83,6 @@ const pt = {
     visit: 'Ver ao vivo',
     github: 'Código',
     list: {
-      'fora-do-jogo': {
-        category: 'Front-end · Plataforma de Artigos',
-        description:
-          'Plataforma onde qualquer pessoa pode publicar artigos sobre a internet, passando por um processo de revisão antes de ir ao ar. O conteúdo foca no impacto real da internet na vida das pessoas, tanto os benefícios quanto os riscos. Cada texto passa por uma verificação pra garantir que a informação é confiável.',
-      },
       'mr-beagles': {
         category: 'Front-end · Pet Shop',
         description:
@@ -97,21 +92,6 @@ const pt = {
         category: 'Front-end · Locadora de Veículos',
         description:
           'Landing page da Sixt desenvolvida em React com animações de scroll usando GSAP. Pensada em conexão, facilidade de uso e performance — oferecendo uma experiência fluida e imersiva pra conhecer os serviços e a identidade da marca.',
-      },
-      'kami-notes': {
-        category: 'Full-stack',
-        description:
-          'Aplicativo de notas em markdown com foco em simplicidade. Navegação feita pelo teclado, sincronização em tempo real. Inspirado na estética de papel japonês washi.',
-      },
-      'hanami-sounds': {
-        category: 'Dev Criativo',
-        description:
-          'Experiência sonora interativa que combina paisagens lo-fi com as estações das cerejeiras. Construída com scroll-driven animation e o ecossistema GSAP.',
-      },
-      'tokyo-type': {
-        category: 'Front-end',
-        description:
-          'Site editorial sobre tipografia em Tóquio. Animações progressivas de texto, composição vertical em japonês e atenção obsessiva aos detalhes tipográficos.',
       },
     },
   },
