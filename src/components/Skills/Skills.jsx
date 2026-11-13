@@ -3,6 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { gsap } from '../../lib/gsap';
 import { TbFlower } from 'react-icons/tb';
 import { stack } from '../../data/stack';
+import SectionHead from '../ui/SectionHead';
 import styles from './Skills.module.css';
 
 const MARQUEE_ITEMS = [...stack.marquee, ...stack.marquee];
@@ -70,15 +71,7 @@ const Skills = forwardRef(function Skills(_props, ref) {
       </div>
 
       <div className="section__inner">
-        <div className="section-head">
-          <span className="section-head__label">
-            <span className="section-head__num">02</span>
-            <span className="eyebrow">{t('stack.eyebrow')}</span>
-          </span>
-          <span className="jp section-head__jp" aria-hidden="true">
-            {stack.jp}
-          </span>
-        </div>
+        <SectionHead id="stack" />
 
         <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">

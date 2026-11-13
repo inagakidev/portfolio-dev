@@ -17,3 +17,11 @@ export const profile = {
     instagram: 'https://www.instagram.com/amandfsk',
   },
 };
+
+// Ordem de exibição na seção de contato; o rótulo vem do i18n (contact.<id>).
+export const contactLinks = [
+  { id: 'email', value: profile.socials.email, href: `mailto:${profile.socials.email}` },
+  { id: 'linkedin', value: '@amanda-inagaki', href: profile.socials.linkedin },
+  { id: 'github', value: '@inagakidev', href: profile.socials.github },
+  { id: 'instagram', value: '@amandfsk', href: profile.socials.instagram },
+];

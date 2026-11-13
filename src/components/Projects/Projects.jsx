@@ -5,6 +5,7 @@ import { projects } from '../../data/projects';
 import { initProjectAnimations } from '../../animations/projectAnimations';
 import SakuraBlossom from '../Decorative/SakuraBlossom';
 import ResponsiveImage from '../ui/ResponsiveImage';
+import SectionHead from '../ui/SectionHead';
 import styles from './Projects.module.css';
 
 function ProjectItem({ project, index }) {
@@ -117,15 +118,7 @@ const Projects = forwardRef(function Projects(_props, ref) {
       <SakuraBlossom size={120} className={styles.sakura} />
 
       <div className="section__inner">
-        <div className="section-head">
-          <span className="section-head__label">
-            <span className="section-head__num">03</span>
-            <span className="eyebrow">{t('projects.eyebrow')}</span>
-          </span>
-          <span className="jp section-head__jp" aria-hidden="true">
-            作品
-          </span>
-        </div>
+        <SectionHead id="projects" />
 
         <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">

@@ -1,5 +1,4 @@
 export const stack = {
-  jp: '道具',
   groups: [
     { id: 'front', skills: ['React', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'GSAP'] },
     { id: 'back', skills: ['Node.js'] },

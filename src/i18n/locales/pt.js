@@ -38,7 +38,6 @@ const pt = {
     titleEm: 'SELECIONADOS',
     indexAria: 'Índice do portfólio',
     scroll: 'Role para explorar',
-    selectedWork: 'Projetos',
   },
   about: {
     eyebrow: 'Sobre',
