@@ -1,18 +1,16 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from '../../lib/gsap';
-import { changeLanguage } from '../../i18n';
 import { profile } from '../../data/profile';
+import { sections } from '../../data/sections';
 import { prefersReducedMotion } from '../../utils/motion';
 import SakuraBranch from '../Decorative/SakuraBranch';
+import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 
-const NAV_IDS = ['about', 'stack', 'projects', 'contact'];
-const LANGUAGES = ['en', 'pt', 'ja'];
-
 export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenuToggle }) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const headerRef = useRef(null);
   const overlayRef = useRef(null);
   const linksRef = useRef(null);
@@ -167,22 +165,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
             {menuOpen ? <RxCross1 /> : <RxHamburgerMenu />}
           </button>
 
-          <div className={styles.lang} role="group" aria-label={t('nav.langLabel')}>
-            {LANGUAGES.map((code) => {
-              const active = i18n.resolvedLanguage === code;
-              return (
-                <button
-                  key={code}
-                  type="button"
-                  className={`${styles.lang__btn} ${active ? styles['lang__btn--active'] : ''}`}
-                  aria-pressed={active}
-                  onClick={() => changeLanguage(code)}
-                >
-                  {code.toUpperCase()}
-                </button>
-              );
-            })}
-          </div>
+          <LanguageSwitcher />
         </div>
       </header>
 
@@ -204,7 +187,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
           </p>
           <nav aria-label={t('common.menu')}>
             <ul ref={linksRef}>
-              {NAV_IDS.map((id, i) => (
+              {sections.map(({ id, number, jp }) => (
                 <li key={id}>
                   <a
                     className={styles.overlay__link}
@@ -217,13 +200,10 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
                       }, 250);
                     }}
                   >
-                    <span className={styles.overlay__linknum}>0{i + 1}</span>
+                    <span className={styles.overlay__linknum}>{number}</span>
                     <span className={styles.overlay__linktext}>{t(`nav.${id}`)}</span>
                     <span className={`jp ${styles.overlay__linkjp}`} lang="ja">
-                      {id === 'about' && '私'}
-                      {id === 'stack' && '道具'}
-                      {id === 'projects' && '作品'}
-                      {id === 'contact' && '連絡'}
+                      {jp}
                     </span>
                   </a>
                 </li>
@@ -237,22 +217,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
             <span className={`jp ${styles.overlay__footjp}`} lang="ja">
               {t('contact.footerNote')}
             </span>
-            <div className={styles.lang} role="group" aria-label={t('nav.langLabel')}>
-              {LANGUAGES.map((code) => {
-                const active = i18n.resolvedLanguage === code;
-                return (
-                  <button
-                    key={code}
-                    type="button"
-                    className={`${styles.lang__btn} ${active ? styles['lang__btn--active'] : ''}`}
-                    aria-pressed={active}
-                    onClick={() => changeLanguage(code)}
-                  >
-                    {code.toUpperCase()}
-                  </button>
-                );
-              })}
-            </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

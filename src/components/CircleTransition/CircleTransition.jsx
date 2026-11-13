@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { initHeroAnimation } from '../../animations/heroAnimation';
 import { profile } from '../../data/profile';
+import { sections } from '../../data/sections';
 import ResponsiveImage from '../ui/ResponsiveImage';
 import styles from './CircleTransition.module.css';
 
@@ -69,34 +70,15 @@ export default function CircleTransition({ sectionRef, nav, children }) {
             <em>{t('reveal.titleEm')}</em>
           </h2>
           <nav className={styles.reveal__index} aria-label={t('reveal.indexAria')}>
-            <a href="#about" className={styles.reveal__indexLink} data-reveal-el>
-              <span className={styles.reveal__num}>01</span>
-              <span>{t('nav.about')}</span>
-              <span className="jp" lang="ja">
-                私
-              </span>
-            </a>
-            <a href="#stack" className={styles.reveal__indexLink} data-reveal-el>
-              <span className={styles.reveal__num}>02</span>
-              <span>{t('nav.stack')}</span>
-              <span className="jp" lang="ja">
-                道具
-              </span>
-            </a>
-            <a href="#projects" className={styles.reveal__indexLink} data-reveal-el>
-              <span className={styles.reveal__num}>03</span>
-              <span>{t('reveal.selectedWork')}</span>
-              <span className="jp" lang="ja">
-                作品
-              </span>
-            </a>
-            <a href="#contact" className={styles.reveal__indexLink} data-reveal-el>
-              <span className={styles.reveal__num}>04</span>
-              <span>{t('nav.contact')}</span>
-              <span className="jp" lang="ja">
-                連絡
-              </span>
-            </a>
+            {sections.map(({ id, number, jp }) => (
+              <a key={id} href={`#${id}`} className={styles.reveal__indexLink} data-reveal-el>
+                <span className={styles.reveal__num}>{number}</span>
+                <span>{t(`${id}.eyebrow`)}</span>
+                <span className="jp" lang="ja">
+                  {jp}
+                </span>
+              </a>
+            ))}
           </nav>
         </div>
       </div>

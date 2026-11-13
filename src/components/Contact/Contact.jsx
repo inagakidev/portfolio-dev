@@ -1,52 +1,18 @@
 import { forwardRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { TbArrowUpRight } from 'react-icons/tb';
-import { profile } from '../../data/profile';
+import { contactLinks, profile } from '../../data/profile';
 import TokyoClock from '../Decorative/TokyoClock';
+import SectionHead from '../ui/SectionHead';
 import styles from './Contact.module.css';
 
 const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
   const { t } = useTranslation();
 
-  const LINKS = [
-    {
-      num: '01',
-      label: t('contact.email'),
-      value: profile.socials.email,
-      href: `mailto:${profile.socials.email}`,
-    },
-    {
-      num: '02',
-      label: t('contact.linkedin'),
-      value: '@amanda-inagaki',
-      href: profile.socials.linkedin,
-    },
-    {
-      num: '03',
-      label: t('contact.github'),
-      value: '@inagakidev',
-      href: profile.socials.github,
-    },
-    {
-      num: '04',
-      label: t('contact.instagram'),
-      value: '@amandfsk',
-      href: profile.socials.instagram,
-    },
-  ];
-
   return (
     <section ref={ref} id="contact" className={`section ${styles.contact}`}>
       <div className={`section__inner ${styles.inner}`}>
-        <div className="section-head">
-          <span className="section-head__label">
-            <span className="section-head__num">04</span>
-            <span className="eyebrow">{t('contact.eyebrow')}</span>
-          </span>
-          <span className="jp section-head__jp" aria-hidden="true">
-            連絡
-          </span>
-        </div>
+        <SectionHead id="contact" />
 
         <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">
@@ -62,16 +28,16 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
         </p>
 
         <ul className={styles.links}>
-          {LINKS.map((link) => (
-            <li key={link.num} data-anim="row">
+          {contactLinks.map((link, i) => (
+            <li key={link.id} data-anim="row">
               <a
                 href={link.href}
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noreferrer"
                 className={styles.links__item}
               >
-                <span className={styles.links__num}>{link.num}</span>
-                <span className={styles.links__label}>{link.label}</span>
+                <span className={styles.links__num}>{String(i + 1).padStart(2, '0')}</span>
+                <span className={styles.links__label}>{t(`contact.${link.id}`)}</span>
                 <span className={styles.links__value}>{link.value}</span>
                 <span className={styles.links__arrow} aria-hidden="true">
                   <TbArrowUpRight />

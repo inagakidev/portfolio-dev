@@ -38,7 +38,6 @@ const en = {
     titleEm: 'WORK',
     indexAria: 'Portfolio index',
     scroll: 'Scroll to explore',
-    selectedWork: 'Selected Work',
   },
   about: {
     eyebrow: 'About',

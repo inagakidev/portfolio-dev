@@ -3,6 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { profile } from '../../data/profile';
 import ResponsiveImage from '../ui/ResponsiveImage';
 import SakuraBranch from '../Decorative/SakuraBranch';
+import SectionHead from '../ui/SectionHead';
 import styles from './About.module.css';
 
 const About = forwardRef(function About(_props, ref) {
@@ -13,15 +14,7 @@ const About = forwardRef(function About(_props, ref) {
   return (
     <section ref={ref} id="about" className={`section ${styles.about}`}>
       <div className="section__inner">
-        <div className="section-head">
-          <span className="section-head__label">
-            <span className="section-head__num">01</span>
-            <span className="eyebrow">{t('about.eyebrow')}</span>
-          </span>
-          <span className="jp section-head__jp" aria-hidden="true">
-            私
-          </span>
-        </div>
+        <SectionHead id="about" />
 
         <h2 className={`section-heading ${styles.heading}`}>
           <span data-anim="heading">

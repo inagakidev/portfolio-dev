@@ -38,7 +38,6 @@ const ja = {
     titleEm: '作品',
     indexAria: 'ポートフォリオ目次',
     scroll: 'スクロールして探索',
-    selectedWork: '作品',
   },
   about: {
     eyebrow: '私について',
