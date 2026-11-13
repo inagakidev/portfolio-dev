@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { initHeroAnimation } from "../../animations/heroAnimation";
-import { profile } from "../../data/profile";
-import styles from "./CircleTransition.module.css";
-import portrait from "../../assets/images/amandaPerfil.png";
+import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { initHeroAnimation } from '../../animations/heroAnimation';
+import { profile } from '../../data/profile';
+import ResponsiveImage from '../ui/ResponsiveImage';
+import styles from './CircleTransition.module.css';
 
 export default function CircleTransition({ sectionRef, nav, children }) {
   const { t } = useTranslation();
@@ -19,9 +19,7 @@ export default function CircleTransition({ sectionRef, nav, children }) {
       cover: coverRef.current,
       circle: circleRef.current,
       circleWrap: circleWrapRef.current,
-      reveal: circleRef.current
-        ?.closest("[data-stage]")
-        ?.querySelector("[data-reveal]"),
+      reveal: circleRef.current?.closest('[data-stage]')?.querySelector('[data-reveal]'),
       nav,
     });
     return ctx;
@@ -37,21 +35,22 @@ export default function CircleTransition({ sectionRef, nav, children }) {
         <div ref={circleRef} className={styles.circle}>
           <span className={styles.circle__ring} data-circle-fade />
           <span className={styles.circle__ringSm} data-circle-fade />
-          <p
-            className={`jp ${styles.circle__label}`}
-            lang="ja"
-            data-circle-fade
-          >
+          <p className={`jp ${styles.circle__label}`} lang="ja" data-circle-fade>
             花 · {profile.year}
           </p>
         </div>
         <div className={styles.circle__face} data-circle-fade>
-          {portrait ? (
-            <img src={portrait} alt="" className={styles.circle__img} />
+          {profile.portrait ? (
+            <ResponsiveImage
+              image={profile.portrait}
+              alt=""
+              className={styles.circle__img}
+              sizes="(max-width: 720px) 60vw, 480px"
+              loading="eager"
+              fetchPriority="high"
+            />
           ) : (
-            <span className={styles.circle__monogram}>
-              {profile.name.monogram}
-            </span>
+            <span className={styles.circle__monogram}>{profile.name.monogram}</span>
           )}
         </div>
       </div>
@@ -63,56 +62,37 @@ export default function CircleTransition({ sectionRef, nav, children }) {
             <span className="jp" lang="ja">
               第二章
             </span>
-            {t("reveal.label")}
+            {t('reveal.label')}
           </p>
           <h2 className={styles.reveal__title} data-reveal-el>
-            {t("reveal.title")}
-            <em>{t("reveal.titleEm")}</em>
+            {t('reveal.title')}
+            <em>{t('reveal.titleEm')}</em>
           </h2>
-          <nav
-            className={styles.reveal__index}
-            aria-label={t("reveal.indexAria")}
-          >
-            <a
-              href="#about"
-              className={styles.reveal__indexLink}
-              data-reveal-el
-            >
+          <nav className={styles.reveal__index} aria-label={t('reveal.indexAria')}>
+            <a href="#about" className={styles.reveal__indexLink} data-reveal-el>
               <span className={styles.reveal__num}>01</span>
-              <span>{t("nav.about")}</span>
+              <span>{t('nav.about')}</span>
               <span className="jp" lang="ja">
                 私
               </span>
             </a>
-            <a
-              href="#stack"
-              className={styles.reveal__indexLink}
-              data-reveal-el
-            >
+            <a href="#stack" className={styles.reveal__indexLink} data-reveal-el>
               <span className={styles.reveal__num}>02</span>
-              <span>{t("nav.stack")}</span>
+              <span>{t('nav.stack')}</span>
               <span className="jp" lang="ja">
                 道具
               </span>
             </a>
-            <a
-              href="#projects"
-              className={styles.reveal__indexLink}
-              data-reveal-el
-            >
+            <a href="#projects" className={styles.reveal__indexLink} data-reveal-el>
               <span className={styles.reveal__num}>03</span>
-              <span>{t("reveal.selectedWork")}</span>
+              <span>{t('reveal.selectedWork')}</span>
               <span className="jp" lang="ja">
                 作品
               </span>
             </a>
-            <a
-              href="#contact"
-              className={styles.reveal__indexLink}
-              data-reveal-el
-            >
+            <a href="#contact" className={styles.reveal__indexLink} data-reveal-el>
               <span className={styles.reveal__num}>04</span>
-              <span>{t("nav.contact")}</span>
+              <span>{t('nav.contact')}</span>
               <span className="jp" lang="ja">
                 連絡
               </span>

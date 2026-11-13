@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import IntroScreen from './components/IntroScreen/IntroScreen';
 import Navbar from './components/Navbar/Navbar';
@@ -64,12 +63,7 @@ function Portfolio() {
       </a>
       <div className="scroll-progress" aria-hidden="true" />
       <CustomCursor />
-      <Navbar
-        theme={navTheme}
-        hidden={navHidden}
-        menuOpen={menuOpen}
-        onMenuToggle={setMenuOpen}
-      />
+      <Navbar theme={navTheme} hidden={navHidden} menuOpen={menuOpen} onMenuToggle={setMenuOpen} />
       <main id="main">
         <Hero onNavUpdate={handleHeroNavUpdate} onNavLeave={handleHeroNavLeave} />
         <About ref={aboutRef} />
@@ -82,11 +76,5 @@ function Portfolio() {
 }
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Portfolio />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <Portfolio />;
 }

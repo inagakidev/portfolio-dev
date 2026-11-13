@@ -1,12 +1,9 @@
 import { forwardRef, useRef, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from '../../lib/gsap';
 import { TbFlower } from 'react-icons/tb';
 import { stack } from '../../data/stack';
 import styles from './Skills.module.css';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const MARQUEE_ITEMS = [...stack.marquee, ...stack.marquee];
 
@@ -78,7 +75,9 @@ const Skills = forwardRef(function Skills(_props, ref) {
             <span className="section-head__num">02</span>
             <span className="eyebrow">{t('stack.eyebrow')}</span>
           </span>
-          <span className="jp section-head__jp" aria-hidden="true">{stack.jp}</span>
+          <span className="jp section-head__jp" aria-hidden="true">
+            {stack.jp}
+          </span>
         </div>
 
         <h2 className={`section-heading ${styles.heading}`}>
@@ -86,7 +85,10 @@ const Skills = forwardRef(function Skills(_props, ref) {
             <Trans i18nKey="stack.h1a" />
           </span>
           <span data-anim="heading">
-            <Trans i18nKey="stack.h1b" components={{ dot: <em className={styles.heading__dot} /> }} />
+            <Trans
+              i18nKey="stack.h1b"
+              components={{ dot: <em className={styles.heading__dot} /> }}
+            />
           </span>
         </h2>
 

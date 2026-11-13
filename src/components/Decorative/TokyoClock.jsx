@@ -17,7 +17,10 @@ export default function TokyoClock({ className }) {
 
   return (
     <p className={className}>
-      <span className="jp" lang="ja">東京</span> · {time} JST
+      <span className="jp" lang="ja">
+        東京
+      </span>{' '}
+      · {time} JST
     </p>
   );
 }

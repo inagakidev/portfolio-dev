@@ -1,48 +1,47 @@
-import { forwardRef } from "react";
-import { useTranslation, Trans } from "react-i18next";
-import { TbArrowUpRight } from "react-icons/tb";
-import { profile } from "../../data/profile";
-import TokyoClock from "../Decorative/TokyoClock";
-import styles from "./Contact.module.css";
+import { forwardRef } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
+import { TbArrowUpRight } from 'react-icons/tb';
+import { profile } from '../../data/profile';
+import TokyoClock from '../Decorative/TokyoClock';
+import styles from './Contact.module.css';
 
 const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
   const { t } = useTranslation();
 
   const LINKS = [
     {
-      num: "01",
-      label: t("contact.email"),
+      num: '01',
+      label: t('contact.email'),
       value: profile.socials.email,
       href: `mailto:${profile.socials.email}`,
     },
     {
-      num: "02",
-      label: t("contact.linkedin"),
-      value: "@amanda-inagaki",
+      num: '02',
+      label: t('contact.linkedin'),
+      value: '@amanda-inagaki',
       href: profile.socials.linkedin,
     },
     {
-      num: "03",
-      label: t("contact.github"),
-      value: "@inagakidev",
+      num: '03',
+      label: t('contact.github'),
+      value: '@inagakidev',
       href: profile.socials.github,
     },
     {
-      num: "04",
-      label: t("contact.instagram"),
-      value: "@amandfsk",
+      num: '04',
+      label: t('contact.instagram'),
+      value: '@amandfsk',
       href: profile.socials.instagram,
     },
   ];
 
   return (
     <section ref={ref} id="contact" className={`section ${styles.contact}`}>
-
       <div className={`section__inner ${styles.inner}`}>
         <div className="section-head">
           <span className="section-head__label">
             <span className="section-head__num">04</span>
-            <span className="eyebrow">{t("contact.eyebrow")}</span>
+            <span className="eyebrow">{t('contact.eyebrow')}</span>
           </span>
           <span className="jp section-head__jp" aria-hidden="true">
             連絡
@@ -59,7 +58,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
         </h2>
 
         <p className={styles.note} data-anim="heading">
-          {t("contact.note")}
+          {t('contact.note')}
         </p>
 
         <ul className={styles.links}>
@@ -67,7 +66,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
             <li key={link.num} data-anim="row">
               <a
                 href={link.href}
-                target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noreferrer"
                 className={styles.links__item}
               >
@@ -86,7 +85,7 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
       <footer className={styles.footer}>
         <div className={styles.footer__inner}>
           <p className={styles.footer__copy}>
-            {t("contact.footerCopy", {
+            {t('contact.footerCopy', {
               year: profile.year,
               name: `${profile.name.first} ${profile.name.last}`,
             })}
@@ -94,15 +93,11 @@ const Contact = forwardRef(function Contact({ onBackToTop }, ref) {
 
           <TokyoClock className={styles.footer__note} />
 
-          <button
-            type="button"
-            className={styles.backTop}
-            onClick={onBackToTop}
-          >
+          <button type="button" className={styles.backTop} onClick={onBackToTop}>
             <span className={styles.backTop__arrow} aria-hidden="true">
               ↑
             </span>
-            <span className="eyebrow">{t("contact.backToTop")}</span>
+            <span className="eyebrow">{t('contact.backToTop')}</span>
           </button>
         </div>
       </footer>

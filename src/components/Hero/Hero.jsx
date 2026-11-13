@@ -23,7 +23,9 @@ export default function Hero({ onNavUpdate, onNavLeave }) {
         </div>
 
         <p className={`eyebrow ${styles.cover__kicker}`} data-hero-label>
-          <span className="jp" lang="ja">{profile.roleJp}</span>
+          <span className="jp" lang="ja">
+            {profile.roleJp}
+          </span>
           {t('hero.kicker', { year: profile.year })}
         </p>
 

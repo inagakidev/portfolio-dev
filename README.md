@@ -10,22 +10,22 @@ O projeto nasceu da vontade de criar algo que não parecesse um portfólio gené
 
 ## O que tem
 
-* Animações de scroll com GSAP e ScrollTrigger
-* Sistema de internacionalização (PT, EN, JA)
-* Layout responsivo com mobile first
-* Marquee com ícones de flor (react-icons)
-* Menu overlay com transições suaves
-* Custom cursor
-* Tema com cores do Japão
+- Animações de scroll com GSAP e ScrollTrigger
+- Sistema de internacionalização (PT, EN, JA)
+- Layout responsivo com mobile first
+- Marquee com ícones de flor (react-icons)
+- Menu overlay com transições suaves
+- Custom cursor
+- Tema com cores do Japão
 
 ## Tech Stack
 
-* React 19
-* Vite
-* GSAP
-* i18next
-* react-icons
-* CSS Modules
+- React 19
+- Vite
+- GSAP
+- i18next
+- react-icons
+- CSS Modules
 
 ## Como rodar
 
@@ -39,17 +39,25 @@ npm run dev
 ```
 src/
 ├── animations/      # Lógica de animação (hero, scroll, projects)
-├── assets/          # Imagens e fontes
+├── assets/
+│   └── images/optimized/  # AVIF/WebP/JPG gerados a partir dos originais
 ├── components/      # Componentes React organizados por seção
+│   ├── ui/          # Componentes reutilizáveis (ResponsiveImage)
 │   ├── About/
 │   ├── Contact/
 │   ├── Hero/
 │   ├── Navbar/
 │   ├── Projects/
 │   └── Skills/
-├── data/            # Dados de projetos, stack e perfil
-└── i18n.js          # Traduções (português, inglês, japonês)
+├── data/            # Perfil, projetos, stack e metadados das imagens
+├── i18n/            # Configuração e locales (en, pt, ja)
+├── lib/             # Setup compartilhado do GSAP
+└── utils/
 ```
+
+As imagens em `src/assets/images/optimized/` são geradas a partir dos
+originais com `ffmpeg` e entregues via `srcset` em AVIF/WebP, com fallback
+em JPG/PNG.
 
 ## Autora
 

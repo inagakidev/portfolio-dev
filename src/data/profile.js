@@ -1,4 +1,4 @@
-import portraitImg from '../assets/images/amandaPerfil.png';
+import { portraitImage } from './images';
 
 export const profile = {
   name: {
@@ -9,7 +9,7 @@ export const profile = {
   roleJp: 'フロントエンド開発者',
   year: 2026,
   heroJp: '創る',
-  portrait: portraitImg,
+  portrait: portraitImage,
   socials: {
     email: 'inagakilanding@gmail.com',
     github: 'https://github.com/inagakidev',
