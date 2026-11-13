@@ -7,14 +7,17 @@ import { prefersReducedMotion } from '../../utils/motion';
 import { useScrollLock } from '../../hooks/useScrollLock';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import LanguageSwitcher from './LanguageSwitcher';
-import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
+import styles from './Navbar.module.css';
+
+// Atraso entre fechar o menu e rolar até a seção escolhida.
+const MENU_SCROLL_DELAY = 250;
 
 export default function Navbar({ theme = 'ink', hidden = false }) {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const wasOpenRef = useRef(false);
-  const headerRef = useRef(null);
+  const burgerRef = useRef(null);
   const overlayRef = useRef(null);
   const linksRef = useRef(null);
   const branchRef = useRef(null);
@@ -28,7 +31,7 @@ export default function Navbar({ theme = 'ink', hidden = false }) {
   useEffect(() => {
     const overlay = overlayRef.current;
     const links = linksRef.current;
-    const burger = headerRef.current?.querySelector('button');
+    const burger = burgerRef.current;
 
     if (menuOpen) {
       gsap.set(overlay, { pointerEvents: 'auto' });
@@ -140,7 +143,6 @@ export default function Navbar({ theme = 'ink', hidden = false }) {
   return (
     <>
       <header
-        ref={headerRef}
         className={`${styles.nav} ${paperTheme ? styles['nav--paper'] : ''} ${hidden ? styles['nav--hidden'] : ''}`}
       >
         <a
@@ -160,6 +162,7 @@ export default function Navbar({ theme = 'ink', hidden = false }) {
 
         <div className={styles.nav__right}>
           <button
+            ref={burgerRef}
             className={styles.burger}
             type="button"
             aria-label={menuOpen ? t('common.menuClose') : t('common.menuOpen')}
@@ -202,7 +205,7 @@ export default function Navbar({ theme = 'ink', hidden = false }) {
                       closeMenu();
                       setTimeout(() => {
                         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                      }, 250);
+                      }, MENU_SCROLL_DELAY);
                     }}
                   >
                     <span className={styles.overlay__linknum}>{number}</span>

@@ -11,24 +11,23 @@ export default function CircleTransition({ sectionRef, nav, children }) {
   const coverRef = useRef(null);
   const circleWrapRef = useRef(null);
   const circleRef = useRef(null);
+  const revealRef = useRef(null);
 
   useEffect(() => {
-    // O painel de reveal não é passado por prop: ele é localizado subindo até o
-    // [data-stage] e buscando o [data-reveal] dentro dele.
     const ctx = initHeroAnimation({
       section: sectionRef.current,
       cover: coverRef.current,
       circle: circleRef.current,
       circleWrap: circleWrapRef.current,
-      reveal: circleRef.current?.closest('[data-stage]')?.querySelector('[data-reveal]'),
+      reveal: revealRef.current,
       nav,
     });
     return ctx;
   }, [sectionRef, nav]);
 
   return (
-    <div className={styles.stage} data-stage>
-      <div ref={coverRef} className={styles.cover} data-cover>
+    <div className={styles.stage}>
+      <div ref={coverRef} className={styles.cover}>
         {children}
       </div>
 
@@ -56,7 +55,7 @@ export default function CircleTransition({ sectionRef, nav, children }) {
         </div>
       </div>
 
-      <div className={styles.reveal} data-reveal>
+      <div ref={revealRef} className={styles.reveal}>
         <span className={styles.reveal__ring} data-reveal-el />
         <div className={styles.reveal__inner}>
           <p className={`eyebrow ${styles.reveal__label}`} data-reveal-el>
