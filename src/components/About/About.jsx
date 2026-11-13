@@ -1,13 +1,18 @@
-import { forwardRef } from 'react';
+import { useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { profile } from '../../data/profile';
+import { initAboutAnimations } from '../../animations/sectionAnimations';
+import { useAnimation } from '../../hooks/useAnimation';
 import ResponsiveImage from '../ui/ResponsiveImage';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import SectionHead from '../ui/SectionHead';
 import styles from './About.module.css';
 
-const About = forwardRef(function About(_props, ref) {
+export default function About() {
   const { t } = useTranslation();
+  const ref = useRef(null);
+  useAnimation(ref, initAboutAnimations);
+
   const portrait = profile.portrait;
   const paragraphs = t('about.paragraphs', { returnObjects: true });
 
@@ -65,6 +70,4 @@ const About = forwardRef(function About(_props, ref) {
       </div>
     </section>
   );
-});
-
-export default About;
+}

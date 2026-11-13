@@ -1,8 +1,9 @@
-import { forwardRef, useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { gsap } from '../../lib/gsap';
 import { TbFlower } from 'react-icons/tb';
 import { stack } from '../../data/stack';
+import { initSkillsAnimations } from '../../animations/sectionAnimations';
+import { useAnimation } from '../../hooks/useAnimation';
 import SectionHead from '../ui/SectionHead';
 import styles from './Skills.module.css';
 
@@ -21,46 +22,16 @@ function MarqueeGroup() {
   );
 }
 
-const Skills = forwardRef(function Skills(_props, ref) {
+export default function Skills() {
   const { t } = useTranslation();
-  const trackRef = useRef(null);
-  const listRef = useRef(null);
+  const ref = useRef(null);
 
-  useEffect(() => {
-    const mm = gsap.matchMedia();
-    mm.add('(prefers-reduced-motion: no-preference)', () => {
-      gsap.to(trackRef.current, {
-        xPercent: -50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: ref.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.6,
-        },
-      });
-      gsap.fromTo(
-        listRef.current,
-        { xPercent: 3 },
-        {
-          xPercent: -2,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: ref.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.8,
-          },
-        },
-      );
-    });
-    return () => mm.revert();
-  }, [ref]);
+  useAnimation(ref, initSkillsAnimations);
 
   return (
     <section ref={ref} id="stack" className={`section ${styles.skills}`}>
       <div className={styles.marquee} aria-hidden="true">
-        <div ref={trackRef} className={styles.marquee__track}>
+        <div className={styles.marquee__track} data-anim="marquee">
           <div className={styles.marquee__group}>
             <MarqueeGroup />
           </div>
@@ -85,7 +56,7 @@ const Skills = forwardRef(function Skills(_props, ref) {
           </span>
         </h2>
 
-        <div ref={listRef} className={styles.list}>
+        <div className={styles.list} data-anim="parallax">
           {stack.groups.map((group, gi) => (
             <div className={styles.group} key={group.id}>
               <h3 className={styles.group__title} data-anim="row">
@@ -107,6 +78,4 @@ const Skills = forwardRef(function Skills(_props, ref) {
       </div>
     </section>
   );
-});
-
-export default Skills;
+}

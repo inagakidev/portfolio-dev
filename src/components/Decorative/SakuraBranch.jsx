@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { PETAL_PATH } from './petalPath';
 
 const PETAL_ROTATIONS = [0, 72, 144, 216, 288];
@@ -18,7 +17,7 @@ const BLOSSOMS = [
   { x: 134, y: 10, rotate: 44, scale: 0.9, color: 'var(--c-red-soft)' },
 ];
 
-const SakuraBranch = forwardRef(function SakuraBranch({ className = '', style }, ref) {
+export default function SakuraBranch({ className = '', style, ref }) {
   return (
     <svg
       ref={ref}
@@ -61,6 +60,4 @@ const SakuraBranch = forwardRef(function SakuraBranch({ className = '', style },
       </g>
     </svg>
   );
-});
-
-export default SakuraBranch;
+}

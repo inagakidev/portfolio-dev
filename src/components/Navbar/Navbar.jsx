@@ -1,32 +1,39 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from '../../lib/gsap';
 import { profile } from '../../data/profile';
 import { sections } from '../../data/sections';
 import { prefersReducedMotion } from '../../utils/motion';
+import { useScrollLock } from '../../hooks/useScrollLock';
 import SakuraBranch from '../Decorative/SakuraBranch';
 import LanguageSwitcher from './LanguageSwitcher';
-import styles from './Navbar.module.css';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
+import styles from './Navbar.module.css';
 
-export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenuToggle }) {
+// Atraso entre fechar o menu e rolar até a seção escolhida.
+const MENU_SCROLL_DELAY = 250;
+
+export default function Navbar({ theme = 'ink', hidden = false }) {
   const { t } = useTranslation();
-  const headerRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const wasOpenRef = useRef(false);
+  const burgerRef = useRef(null);
   const overlayRef = useRef(null);
   const linksRef = useRef(null);
   const branchRef = useRef(null);
   const branchTimelineRef = useRef(null);
   const branchSwayRef = useRef(null);
 
-  const closeMenu = useCallback(() => onMenuToggle(false), [onMenuToggle]);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  useScrollLock(menuOpen);
 
   useEffect(() => {
     const overlay = overlayRef.current;
     const links = linksRef.current;
-    const burger = headerRef.current?.querySelector('button');
+    const burger = burgerRef.current;
 
     if (menuOpen) {
-      document.body.style.overflow = 'hidden';
       gsap.set(overlay, { pointerEvents: 'auto' });
       gsap.to(overlay, {
         clipPath: 'inset(0% 0% 0% 0%)',
@@ -95,7 +102,6 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
           });
       }
     } else {
-      document.body.style.overflow = '';
       gsap.set(overlay, { pointerEvents: 'none' });
       gsap.to(overlay, {
         clipPath: 'inset(0% 0% 100% 0%)',
@@ -107,7 +113,8 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
         opacity: 0,
         duration: 0.25,
       });
-      burger?.focus({ preventScroll: true });
+      // Devolve o foco ao botão só quando o menu estava aberto, não na montagem.
+      if (wasOpenRef.current) burger?.focus({ preventScroll: true });
 
       branchTimelineRef.current?.kill();
       branchTimelineRef.current = null;
@@ -115,8 +122,9 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
       branchSwayRef.current = null;
     }
 
+    wasOpenRef.current = menuOpen;
+
     return () => {
-      document.body.style.overflow = '';
       branchTimelineRef.current?.kill();
       branchSwayRef.current?.kill();
     };
@@ -135,7 +143,6 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
   return (
     <>
       <header
-        ref={headerRef}
         className={`${styles.nav} ${paperTheme ? styles['nav--paper'] : ''} ${hidden ? styles['nav--hidden'] : ''}`}
       >
         <a
@@ -155,12 +162,13 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
 
         <div className={styles.nav__right}>
           <button
+            ref={burgerRef}
             className={styles.burger}
             type="button"
             aria-label={menuOpen ? t('common.menuClose') : t('common.menuOpen')}
             aria-expanded={menuOpen}
             aria-controls="nav-overlay"
-            onClick={() => onMenuToggle(!menuOpen)}
+            onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? <RxCross1 /> : <RxHamburgerMenu />}
           </button>
@@ -197,7 +205,7 @@ export default function Navbar({ theme = 'ink', hidden = false, menuOpen, onMenu
                       closeMenu();
                       setTimeout(() => {
                         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                      }, 250);
+                      }, MENU_SCROLL_DELAY);
                     }}
                   >
                     <span className={styles.overlay__linknum}>{number}</span>

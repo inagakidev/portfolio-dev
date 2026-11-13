@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 import { profile } from '../../data/profile';
 import { prefersReducedMotion } from '../../utils/motion';
+import { useScrollLock } from '../../hooks/useScrollLock';
 import styles from './IntroScreen.module.css';
 
 const STORAGE_KEY = 'portfolio.introShown';
@@ -32,14 +33,14 @@ export default function IntroScreen() {
   const panelRightRef = useRef(null);
   const [done, setDone] = useState(false);
 
+  useScrollLock(visible && !done);
+
   useEffect(() => {
     if (!visible) return;
 
     markIntroSeen();
-    document.body.style.overflow = 'hidden';
 
     const finish = () => {
-      document.body.style.overflow = '';
       setDone(true);
       ScrollTrigger.refresh();
     };
@@ -68,7 +69,6 @@ export default function IntroScreen() {
 
     return () => {
       tl.kill();
-      document.body.style.overflow = '';
     };
   }, [visible]);
 

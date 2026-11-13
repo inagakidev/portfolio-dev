@@ -1,8 +1,9 @@
-import { forwardRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { projects } from '../../data/projects';
 import { initProjectAnimations } from '../../animations/projectAnimations';
+import { useAnimation } from '../../hooks/useAnimation';
 import SakuraBlossom from '../Decorative/SakuraBlossom';
 import ResponsiveImage from '../ui/ResponsiveImage';
 import SectionHead from '../ui/SectionHead';
@@ -106,12 +107,10 @@ function ProjectItem({ project, index }) {
   );
 }
 
-const Projects = forwardRef(function Projects(_props, ref) {
+export default function Projects() {
   const { t } = useTranslation();
-  useEffect(() => {
-    const ctx = initProjectAnimations(ref.current);
-    return ctx;
-  }, [ref]);
+  const ref = useRef(null);
+  useAnimation(ref, initProjectAnimations);
 
   return (
     <section ref={ref} id="projects" className={`section ${styles.projects}`}>
@@ -141,6 +140,4 @@ const Projects = forwardRef(function Projects(_props, ref) {
       </div>
     </section>
   );
-});
-
-export default Projects;
+}
