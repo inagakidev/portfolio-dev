@@ -79,4 +79,8 @@ describe('dados com tradução', () => {
   it.each(required)('%s existe em en', (key) => {
     expect(flat.en).toHaveProperty([key]);
   });
+
+  it('não tem tradução de projeto que não existe em data/projects.js', () => {
+    expect(Object.keys(en.projects.list).sort()).toEqual(projects.map(({ id }) => id).sort());
+  });
 });

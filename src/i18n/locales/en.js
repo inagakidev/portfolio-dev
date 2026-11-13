@@ -93,16 +93,6 @@ const en = {
         description:
           "Landing page for Sixt built in React with scroll-driven animations powered by GSAP. Designed with a focus on connection, ease of use, and performance — giving users a smooth and immersive way to explore Sixt's services and brand identity.",
       },
-      'hanami-sounds': {
-        category: 'Creative Dev',
-        description:
-          'An interactive sound experience that combines lo-fi soundscapes with cherry blossom seasons. Built with scroll-driven animation and the GSAP ecosystem.',
-      },
-      'tokyo-type': {
-        category: 'Front-end',
-        description:
-          'An editorial site about typography in Tokyo. Progressive text animations, vertical Japanese composition, and obsessive attention to typographic details.',
-      },
     },
   },
   contact: {
